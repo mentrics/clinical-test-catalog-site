@@ -1,0 +1,301 @@
+{
+ "note": "Rilev layer assignments are product decisions, not validated science. Derived scores flagged. WERCAP and ONS-4 are not in the 199-catalog xlsx (documented gaps).",
+ "layers": {
+  "L1": "Core symptom screens — the 'what's wrong now' layer",
+  "L2": "Personality / traits — the 'why me' layer",
+  "L3": "Interpersonal / relational — the 'how I relate' layer",
+  "L4": "Meaning / well-being — the 'what's the point' layer"
+ },
+ "instruments": [
+  {
+   "rilev_num": 1,
+   "layer": "L1",
+   "rilev_name": "PHQ-9",
+   "catalog_id": "M01",
+   "outcomes": [
+    "Depression Severity"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 2,
+   "layer": "L1",
+   "rilev_name": "GAD-7",
+   "catalog_id": "A01",
+   "outcomes": [
+    "Anxiety Severity"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 3,
+   "layer": "L1",
+   "rilev_name": "PCL-5",
+   "catalog_id": "T01",
+   "outcomes": [
+    "PTSD Severity",
+    "Intrusion",
+    "Avoidance",
+    "Negative Cognition",
+    "Hyperarousal"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 4,
+   "layer": "L1",
+   "rilev_name": "PROMIS Sleep",
+   "catalog_id": "S04",
+   "outcomes": [
+    "Sleep Disturbance"
+   ],
+   "rilev_derived": [],
+   "version_note": "catalog has PROMIS Sleep Disturbance 8a — matches Rilev's 8-item claim"
+  },
+  {
+   "rilev_num": 5,
+   "layer": "L1",
+   "rilev_name": "CBI",
+   "catalog_id": "B02",
+   "outcomes": [
+    "Personal Burnout",
+    "Work Burnout",
+    "Client Burnout",
+    "Total Burnout"
+   ],
+   "rilev_derived": [
+    "Total Burnout — not an original CBI scale"
+   ]
+  },
+  {
+   "rilev_num": 6,
+   "layer": "L1",
+   "rilev_name": "DOCS",
+   "catalog_id": "O03",
+   "outcomes": [
+    "OCD Severity",
+    "Contamination",
+    "Responsibility",
+    "Unacceptable Thoughts",
+    "Symmetry"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 7,
+   "layer": "L1",
+   "rilev_name": "MDQ",
+   "catalog_id": "P01",
+   "outcomes": [
+    "Mood Elevation Screening"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 8,
+   "layer": "L1",
+   "rilev_name": "ASRS",
+   "catalog_id": "E01",
+   "outcomes": [
+    "Inattention",
+    "Hyperactivity/Impulsivity"
+   ],
+   "rilev_derived": [],
+   "version_note": "18-item v1.1 Symptoms Checklist (E01); E02 is ASRS-5, not used by Rilev"
+  },
+  {
+   "rilev_num": 9,
+   "layer": "L1",
+   "rilev_name": "DSS-B",
+   "catalog_id": "T05",
+   "outcomes": [
+    "Dissociation"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 10,
+   "layer": "L1",
+   "rilev_name": "TAPS",
+   "catalog_id": "SUB05",
+   "outcomes": [
+    "Tobacco",
+    "Alcohol",
+    "Prescription Misuse",
+    "Drug Use"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 11,
+   "layer": "L1",
+   "rilev_name": "WERCAP",
+   "catalog_id": null,
+   "outcomes": [
+    "Psychosis Risk",
+    "Affective",
+    "Psychotic-like Experiences"
+   ],
+   "rilev_derived": [],
+   "gap": "provenance unresolved; not in catalog xlsx"
+  },
+  {
+   "rilev_num": 12,
+   "layer": "L1",
+   "rilev_name": "EDE-QS",
+   "catalog_id": "EAT02",
+   "outcomes": [
+    "Eating Concerns",
+    "Dietary Restraint",
+    "Shape/Weight Concern"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 13,
+   "layer": "L2",
+   "rilev_name": "IPIP-NEO",
+   "catalog_id": "PE01",
+   "outcomes": [
+    "Openness",
+    "Conscientiousness",
+    "Extraversion",
+    "Agreeableness",
+    "Neuroticism"
+   ],
+   "rilev_derived": [],
+   "version_note": "catalog has IPIP-NEO-120; Rilev does not specify length"
+  },
+  {
+   "rilev_num": 14,
+   "layer": "L2",
+   "rilev_name": "PBQ-SF",
+   "catalog_id": "PE10",
+   "outcomes": [
+    "Social Rejection/Inadequacy",
+    "Reliance",
+    "Control/Standards",
+    "Approval/Attention",
+    "Self-importance/Entitlement",
+    "Mistrust",
+    "Abandonment/Identity"
+   ],
+   "rilev_derived": [
+    "all 7 groupings — Rilev's own factor grouping, not the original 10 PBQ-SF scales"
+   ]
+  },
+  {
+   "rilev_num": 15,
+   "layer": "L2",
+   "rilev_name": "ASRS",
+   "catalog_id": "E01",
+   "outcomes": [
+    "ADHD-related Inattention",
+    "ADHD-related Hyperactivity"
+   ],
+   "rilev_derived": [],
+   "note": "same instrument as #8, used in two layers"
+  },
+  {
+   "rilev_num": 16,
+   "layer": "L3",
+   "rilev_name": "ERQ-S",
+   "catalog_id": "ER02",
+   "outcomes": [
+    "Cognitive Reappraisal",
+    "Expressive Suppression"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 17,
+   "layer": "L3",
+   "rilev_name": "PTQ",
+   "catalog_id": "R01",
+   "outcomes": [
+    "Rumination",
+    "Core Repetitive Thinking",
+    "Unproductive Thinking",
+    "Mental Capture"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 18,
+   "layer": "L3",
+   "rilev_name": "UCLA",
+   "catalog_id": "L01",
+   "outcomes": [
+    "Loneliness"
+   ],
+   "rilev_derived": [],
+   "version_note": "catalog has UCLA v3"
+  },
+  {
+   "rilev_num": 19,
+   "layer": "L3",
+   "rilev_name": "RQ",
+   "catalog_id": "REL01",
+   "outcomes": [
+    "Secure",
+    "Anxious/Preoccupied",
+    "Avoidant/Dismissive",
+    "Fearful"
+   ],
+   "rilev_derived": [],
+   "note": "categorical prototypes, not dimensional scores"
+  },
+  {
+   "rilev_num": 20,
+   "layer": "L3",
+   "rilev_name": "GMSEX",
+   "catalog_id": "SEX02",
+   "outcomes": [
+    "Sexual Satisfaction"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 21,
+   "layer": "L3",
+   "rilev_name": "SDI-2",
+   "catalog_id": "SEX01",
+   "outcomes": [
+    "Dyadic Desire",
+    "Solitary Desire"
+   ],
+   "rilev_derived": []
+  },
+  {
+   "rilev_num": 22,
+   "layer": "L4",
+   "rilev_name": "MLQ",
+   "catalog_id": "W04",
+   "outcomes": [
+    "Presence",
+    "Search",
+    "Meaning Gap"
+   ],
+   "rilev_derived": [
+    "Meaning Gap — Rilev-derived, not a published MLQ dimension"
+   ]
+  },
+  {
+   "rilev_num": 23,
+   "layer": "L4",
+   "rilev_name": "ONS-4",
+   "catalog_id": null,
+   "outcomes": [
+    "Life Satisfaction",
+    "Worthwhileness",
+    "Happiness",
+    "Daily Anxiety"
+   ],
+   "rilev_derived": [],
+   "gap": "not in catalog xlsx; national well-being question set, not a clinical instrument"
+  }
+ ],
+ "not_in_catalog_but_claimed": [
+  "CPRS-SF — generates 3 outcomes (Parent-Child Closeness, Parent-Child Conflict, Parent-reported child reliance) in Rilev's 68-outcome set without a test card; unresolved data-quality question"
+ ]
+}

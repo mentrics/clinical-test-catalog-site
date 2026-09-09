@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinical Test Catalog</title>
+<style>
+:root {
+  --bg: #0f1115; --panel: #171a21; --border: #2a2f3a; --text: #e6e9ef;
+  --muted: #9aa3b2; --accent: #4f8cff; --green: #34c07c; --yellow: #e5b84b; --red: #e5646c;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 system-ui, -apple-system, sans-serif; }
+header { padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+header h1 { font-size: 18px; margin: 0; }
+header nav a { color: var(--muted); text-decoration: none; margin-right: 14px; }
+header nav a.active { color: var(--accent); }
+header nav a:hover { color: var(--text); }
+main { padding: 20px 24px; max-width: 1400px; margin: 0 auto; }
+.meta-line { color: var(--muted); font-size: 12px; margin-bottom: 14px; }
+.controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.controls input, .controls select {
+  background: var(--panel); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 7px 10px; font-size: 13px;
+}
+.controls input { flex: 1; min-width: 220px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; position: sticky; top: 0; background: var(--bg); cursor: pointer; user-select: none; }
+tbody tr:hover { background: #1b1f28; }
+a, .link { color: var(--accent); text-decoration: none; cursor: pointer; }
+a:hover, .link:hover { text-decoration: underline; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 11px; border: 1px solid var(--border); }
+.badge.A { color: var(--green); } .badge.B { color: var(--yellow); } .badge.C { color: var(--red); }
+.flag-green { color: var(--green); } .flag-yellow { color: var(--yellow); } .flag-red { color: var(--red); }
+.count { color: var(--muted); font-size: 12px; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; max-width: 760px; }
+.card h2 { margin: 0 0 4px; font-size: 20px; }
+.card .sub { color: var(--muted); margin-bottom: 14px; }
+.kv { display: grid; grid-template-columns: 160px 1fr; gap: 4px 14px; font-size: 13px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; }
+.back { display: inline-block; margin-bottom: 14px; }
+.empty { color: var(--muted); padding: 30px 0; text-align: center; }
+.depth-note { border-left: 3px solid var(--yellow); padding: 8px 12px; background: #1c1a12; border-radius: 4px; margin: 14px 0; font-size: 13px; }
+.btn { background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 9px 20px; font-size: 14px; cursor: pointer; }
+.btn:hover { filter: brightness(1.1); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Clinical Test Catalog</h1>
+  <nav>
+    <a href="#/" data-nav="catalog">Catalog</a>
+    <a href="#/rilev" data-nav="rilev">Rilev 23</a>
+    <a href="#/queue" data-nav="queue">Verification Queue</a>
+  </nav>
+</header>
+<main id="app"></main>
+
+<script>
+const app = document.getElementById('app');
+let instruments = [], domains = [], queue = [], rilev = {instruments: []};
+const state = { q: '', domain: '', tier: '', verification: '' };
+
+const FLAG = {
+  green:  { label: 'Well established',        cls: 'flag-green' },
+  yellow: { label: 'Established with caveats', cls: 'flag-yellow' },
+  red:    { label: 'Needs verification',       cls: 'flag-red' },
+};
+function flagOf(i) {
+  if (i.verification === 'Verified' && i.tier === 'A') return 'green';
+  if (i.verification !== 'Verified') return 'red';
+  return 'yellow';
+}
+const doiLink = d => d ? `<a href="https://doi.org/${d}" target="_blank" rel="noopener">${d}</a>` : '<span class="count">—</span>';
+
+async function load() {
+  [instruments, domains, queue, rilev] = await Promise.all([
+    fetch('data/instruments.json').then(r => r.json()),
+    fetch('data/domains.json').then(r => r.json()),
+    fetch('data/verification_queue.json').then(r => r.json()),
+    fetch('data/rilev_mapping.json').then(r => r.json()),
+  ]);
+  render();
+  window.addEventListener('hashchange', render);
+}
+
+function setNav(name) {
+  document.querySelectorAll('[data-nav]').forEach(a =>
+    a.classList.toggle('active', a.dataset.nav === name));
+}
+
+function render() {
+  const hash = location.hash || '#/';
+  const detail = hash.match(/^#\/instrument\/(.+)$/);
+  if (detail) return renderDetail(decodeURIComponent(detail[1]));
+  const run = hash.match(/^#\/run\/(.+)$/);
+  if (run) return renderRunner(decodeURIComponent(run[1]));
+  if (hash === '#/queue') return renderQueue();
+  if (hash === '#/rilev') return renderRilev();
+  renderCatalog();
+}
+
+function renderRilev() {
+  setNav('rilev');
+  const byId = id => instruments.find(x => x.id === id);
+  const layers = ['L1', 'L2', 'L3', 'L4'];
+  const layerNames = {
+    L1: 'Core symptom screens — "what\'s wrong now"',
+    L2: 'Personality / traits — "why me"',
+    L3: 'Interpersonal / relational — "how I relate"',
+    L4: 'Meaning / well-being — "what\'s the point"',
+  };
+  const sections = layers.map(layer => {
+    const rows = rilev.instruments.filter(e => e.layer === layer).map(e => {
+      const i = e.catalog_id ? byId(e.catalog_id) : null;
+      const flag = i ? FLAG[flagOf(i)] : { cls: 'flag-red', label: 'Not in catalog' };
+      return `<tr>
+        <td>${e.rilev_num}</td>
+        <td>${i ? `<span class="link" data-id="${i.id}">${i.instrument}</span><br><span class="count">${i.id}</span>` : `<strong>${e.rilev_name}</strong><br><span class="flag-red">not in catalog</span>`}</td>
+        <td class="${flag.cls}">${flag.label}</td>
+        <td>${e.outcomes.join(', ')}${e.rilev_derived.length ? `<br><span class="flag-yellow">⚠ derived: ${e.rilev_derived.join('; ')}</span>` : ''}</td>
+      </tr>`;
+    }).join('');
+    return `<h3 style="margin-top:18px">${layer} — ${layerNames[layer]}</h3>
+      <table><thead><tr><th>#</th><th>Instrument</th><th>Catalog status</th><th>Rilev outcomes</th></tr></thead>
+      <tbody>${rows}</tbody></table>`;
+  }).join('');
+  app.innerHTML = `
+    <div class="meta-line">Rilev's commercial methodology: 23 tests · 4 layers · 68 outcomes.
+      Layer assignments and derived scores are <strong>product decisions, not validated science</strong> —
+      encoded here for provenance and documentation. Full audit in <a href="https://github.com/" style="pointer-events:none">consolidate.md</a>.</div>
+    ${sections}
+    <div class="depth-note" style="margin-top:18px">⚠ Not represented in this catalog but claimed by Rilev:
+      WERCAP (provenance unresolved), ONS-4 (absent from source xlsx),
+      CPRS-SF (3 outcomes with no test card — unresolved data-quality question).</div>`;
+  app.querySelectorAll('[data-id]').forEach(el =>
+    el.onclick = () => location.hash = `#/instrument/${el.dataset.id}`);
+}
+
+// --- Assessment runner (v0.3) ---
+let runState = null;
+
+function renderRunner(id) {
+  setNav('catalog');
+  const i = instruments.find(x => x.id === id);
+  if (!i || i.depth !== 'full') { app.innerHTML = '<p class="empty">Assessment not available</p>'; return; }
+  runState = { id, answers: {} };
+  const clusterInfo = i.clusters ? `
+    <p class="count">Also computes: ${i.clusters.map(c => c.name.split('—')[1].trim()).join(', ')}
+    + DSM-5 diagnostic rule check.</p>` : '';
+  app.innerHTML = `
+    <a class="back link" href="#/instrument/${i.id}">← Back to ${i.instrument}</a>
+    <div class="card">
+      <h2>${i.instrument} <span class="count">(${i.id})</span></h2>
+      <div class="sub">${i.construct} · ${i.items.length} items · score range ${i.scoring.range[0]}–${i.scoring.range[1]}</div>
+      <p class="count">Instructions: rate each item per the response scale. Past-month timeframe where applicable
+        (${i.response_scale}).</p>
+      <p class="count">⚠ Demonstration only — not a clinical diagnosis. Responses are not stored; leaving this page
+        discards them.</p>
+      ${clusterInfo}
+      <div style="margin-top:16px"><button id="start-btn" class="btn">Start</button></div>
+    </div>`;
+  document.getElementById('start-btn').onclick = () => renderForm(i);
+}
+
+function renderForm(i) {
+  const optionCells = i.options.map(o =>
+    `<th style="text-align:center">${o.label}<br><span class="count">${o.value}</span></th>`).join('');
+  const rows = i.items.map(it => `
+    <tr data-item="${it.number}">
+      <td style="max-width:480px">${it.number}. ${it.text}</td>
+      ${i.options.map(o => `
+        <td style="text-align:center">
+          <input type="radio" name="item-${it.number}" value="${o.value}"
+            style="accent-color: var(--accent); transform: scale(1.3)">
+        </td>`).join('')}
+    </tr>`).join('');
+  app.innerHTML = `
+    <a class="back link" href="#/instrument/${i.id}">← Cancel</a>
+    <div class="card" style="max-width:900px">
+      <h2>${i.instrument} <span class="count">(${i.id})</span></h2>
+      <p class="count">Select one answer per item, then submit.</p>
+      <form id="run-form">
+      <table>
+        <thead><tr><th>Item</th>${optionCells}</tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <div style="margin-top:16px">
+        <button type="submit" class="btn">Submit</button>
+        <span id="form-err" class="flag-red" style="margin-left:12px"></span>
+      </div>
+      </form>
+    </div>`;
+  document.getElementById('run-form').onsubmit = e => {
+    e.preventDefault();
+    const answers = {};
+    let missing = [];
+    for (const it of i.items) {
+      const sel = document.querySelector(`input[name="item-${it.number}"]:checked`);
+      if (sel) answers[it.number] = Number(sel.value); else missing.push(it.number);
+    }
+    if (missing.length) {
+      document.getElementById('form-err').textContent = `Answer item(s): ${missing.join(', ')}`;
+      return;
+    }
+    renderResult(i, answers);
+  };
+}
+
+function scorePilot(i, answers) {
+  const total = Object.values(answers).reduce((a, b) => a + b, 0);
+  const result = { total, band: i.scoring.cutoffs.find(c => total >= c.min && total <= c.max) };
+  if (i.clusters) {
+    result.clusters = i.clusters.map(c => ({
+      name: c.name,
+      score: c.items.reduce((s, n) => s + answers[n], 0),
+      count: c.items.length,
+      dsm_rule: c.dsm_rule,
+      meets: c.items.filter(n => answers[n] >= c.threshold).length >= c.min_items,
+    }));
+    const positive = ['B', 'C', 'D', 'E'].every(letter => {
+      const cl = result.clusters.find(c => c.name.includes(`Cluster ${letter}`));
+      return cl && cl.meets;
+    });
+    result.dsm5_positive = positive;
+  }
+  return result;
+}
+
+function renderResult(i, answers) {
+  const r = scorePilot(i, answers);
+  const clusterRows = r.clusters ? `
+    <h3>Cluster scores</h3>
+    <table style="max-width:640px"><thead><tr><th>Cluster</th><th>Score</th><th>DSM-5 rule</th><th>Met?</th></tr></thead><tbody>
+      ${r.clusters.map(c => `<tr>
+        <td>${c.name}</td><td>${c.score}</td><td>${c.dsm_rule}</td>
+        <td>${c.meets ? '✓' : '✗'}</td></tr>`).join('')}
+    </tbody></table>
+    <p><strong>DSM-5 symptom-cluster rule:</strong> ${r.dsm5_positive ? 'met (provisional positive)' : 'not met'} —
+      ${r.dsm5_positive ? 'cluster pattern consistent with provisional PTSD range' : 'score is in the threshold range but the DSM-5 cluster pattern is not met'}.</p>` : '';
+  const itemReview = i.items.map(it =>
+    `<span class="count" style="margin-right:10px">${it.number}:${answers[it.number]}</span>`).join('');
+  app.innerHTML = `
+    <a class="back link" href="#/instrument/${i.id}">← Back to ${i.instrument}</a>
+    <div class="card">
+      <h2>Result — ${i.instrument}</h2>
+      <h3 style="font-size:32px; margin:10px 0">${r.total}
+        <span class="count">/ ${i.scoring.range[1]}</span></h3>
+      <p><strong>${r.band.band}</strong> — ${r.band.interpretation}</p>
+      ${clusterRows}
+      <p style="margin-top:14px">${itemReview}</p>
+      <div class="depth-note">⚠ Demonstration only — computed from published scoring rules encoded in this
+        catalog; not a diagnosis. Responses were not stored.</div>
+      <button class="btn" id="again-btn">Take again</button>
+    </div>`;
+  document.getElementById('again-btn').onclick = () => renderRunner(i.id);
+}
+
+function filtered() {
+  const q = state.q.toLowerCase();
+  return instruments.filter(i =>
+    (!state.domain || i.domain === state.domain) &&
+    (!state.tier || i.tier === state.tier) &&
+    (!state.verification || i.verification === state.verification) &&
+    (!q || [i.instrument, i.construct, i.citation, i.id].join(' ').toLowerCase().includes(q)));
+}
+
+function renderCatalog() {
+  setNav('catalog');
+  const opts = (arr, cur) => arr.map(v =>
+    `<option value="${v}" ${v === cur ? 'selected' : ''}>${v}</option>`).join('');
+  const rows = filtered().map(i => {
+    const f = FLAG[flagOf(i)];
+    return `<tr>
+      <td><span class="link" data-id="${i.id}">${i.instrument}</span><br><span class="count">${i.id}</span></td>
+      <td>${i.domain}<br><span class="count">${i.construct}</span></td>
+      <td><span class="badge ${i.tier}">${i.tier}</span></td>
+      <td>${i.catalog_items ?? i.items ?? '—'}</td>
+      <td class="${f.cls}">${f.label}<br><span class="count">${i.verification}</span></td>
+      <td>${i.population ?? '—'}</td>
+    </tr>`;
+  }).join('');
+  app.innerHTML = `
+    <div class="meta-line">${instruments.length} instruments · ${domains.length} domains ·
+      ${instruments.filter(i => i.verification === 'Verified').length} verified ·
+      ${instruments.filter(i => i.verification !== 'Verified').length} awaiting verification</div>
+    <div class="controls">
+      <input id="f-q" placeholder="Search instrument, construct, citation…" value="${state.q}">
+      <select id="f-domain"><option value="">All domains</option>${opts(domains.map(d => d.domain), state.domain)}</select>
+      <select id="f-tier"><option value="">All tiers</option>${opts(['A', 'B', 'C'], state.tier)}</select>
+      <select id="f-verif"><option value="">All verification</option>${opts(['Verified', 'Reference identified'], state.verification)}</select>
+    </div>
+    <table>
+      <thead><tr><th>Instrument</th><th>Domain / Construct</th><th>Tier</th><th>Items</th><th>Provenance</th><th>Population</th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="6" class="empty">No matches</td></tr>'}</tbody>
+    </table>`;
+  document.getElementById('f-q').oninput = e => { state.q = e.target.value; refreshRows(); };
+  for (const [id, key] of [['f-domain', 'domain'], ['f-tier', 'tier'], ['f-verif', 'verification']])
+    document.getElementById(id).onchange = e => { state[key] = e.target.value; refreshRows(); };
+  app.querySelectorAll('[data-id]').forEach(el =>
+    el.onclick = () => location.hash = `#/instrument/${el.dataset.id}`);
+}
+
+function refreshRows() { // re-render list only, keep focus in search box
+  const rows = filtered();
+  const tbody = app.querySelector('tbody');
+  const f = i => FLAG[flagOf(i)];
+  tbody.innerHTML = rows.map(i => `<tr>
+      <td><span class="link" data-id="${i.id}">${i.instrument}</span><br><span class="count">${i.id}</span></td>
+      <td>${i.domain}<br><span class="count">${i.construct}</span></td>
+      <td><span class="badge ${i.tier}">${i.tier}</span></td>
+      <td>${i.catalog_items ?? i.items ?? '—'}</td>
+      <td class="${f(i).cls}">${f(i).label}<br><span class="count">${i.verification}</span></td>
+      <td>${i.population ?? '—'}</td>
+    </tr>`).join('') || '<tr><td colspan="6" class="empty">No matches</td></tr>';
+  tbody.querySelectorAll('[data-id]').forEach(el =>
+    el.onclick = () => location.hash = `#/instrument/${el.dataset.id}`);
+}
+
+function renderDetail(id) {
+  setNav('catalog');
+  const i = instruments.find(x => x.id === id);
+  if (!i) { app.innerHTML = '<p class="empty">Not found</p>'; return; }
+  const fl = FLAG[flagOf(i)];
+  const flag = i.provenance ? FLAG[i.provenance.flag] : fl;
+  const prov = i.provenance ? `
+    <dt>Original publication</dt><dd>${i.provenance.original ?? '—'}</dd>
+    <dt>DOI</dt><dd>${doiLink(i.provenance.doi || i.doi)}</dd>
+    ${i.provenance.derived_from ? `<dt>Derived from</dt><dd>${i.provenance.derived_from}</dd>` : ''}
+    ${i.provenance.note ? `<dt>Data note</dt><dd>${i.provenance.note}</dd>` : ''}` : `
+    <dt>Citation</dt><dd>${i.citation ?? '—'}</dd>
+    <dt>DOI</dt><dd>${doiLink(i.doi)}</dd>`;
+  const license = i.license ? `
+    <dt>License</dt><dd><strong>${i.license.status}</strong> — ${i.license.note}</dd>` : '';
+  const kbLink = i.depth === 'full' ? `
+    <div class="depth-note" style="border-color: var(--green); background: #12201a">
+      📘 <a class="link" href="kb/${i.id}.md" target="_blank" rel="noopener">Plain-language guide</a>
+      — what this test measures, how scoring works, what the scores mean (for non-experts).
+    </div>` : '';
+  const deepSection = i.depth === 'full' ? `
+    <h3 style="margin-top:20px">Items (${i.items.length})</h3>
+    <p class="count">Response scale: ${i.response_scale}</p>
+    <ol style="padding-left:20px">${i.items.map(it =>
+      `<li style="margin-bottom:6px">${it.text}</li>`).join('')}</ol>
+    ${i.options ? `<h3>Response options</h3>
+    <table style="max-width:480px"><thead><tr><th>Value</th><th>Label</th></tr></thead><tbody>
+      ${i.options.map(o => `<tr><td>${o.value}</td><td>${o.label}</td></tr>`).join('')}
+    </tbody></table>` : ''}
+    <h3>Scoring</h3>
+    <dl class="kv">
+      <dt>Method</dt><dd>${i.scoring.method}</dd>
+      <dt>Score range</dt><dd>${i.scoring.range[0]}–${i.scoring.range[1]}</dd>
+      <dt>Note</dt><dd>${i.scoring.note}</dd>
+    </dl>
+    ${i.scoring.cutoffs ? `<h3>Interpretation bands</h3>
+    <table style="max-width:640px"><thead><tr><th>Range</th><th>Band</th><th>Interpretation</th></tr></thead><tbody>
+      ${i.scoring.cutoffs.map(c => `<tr><td>${c.min}–${c.max}</td><td><strong>${c.band}</strong></td><td>${c.interpretation}</td></tr>`).join('')}
+    </tbody></table>` : ''}
+    ${i.clusters ? `<h3>Subscales / clusters</h3>
+    <table style="max-width:640px"><thead><tr><th>Cluster</th><th>Items</th><th>DSM-5 rule</th></tr></thead><tbody>
+      ${i.clusters.map(c => `<tr><td>${c.name}</td><td>${c.items.join(', ')}</td><td>${c.dsm_rule}</td></tr>`).join('')}
+    </tbody></table>` : ''}
+    ${i.subscale_note ? `<p class="count">Subscale note: ${i.subscale_note}</p>` : ''}
+    <div style="margin-top:16px"><a class="link" href="#/run/${i.id}">▶ Take the assessment</a></div>`
+  : `
+    <div class="depth-note">⚠ Scoring not yet encoded. Deep content (items, response options,
+      scoring rules, cutoffs) arrives in v0.2 for pilot instruments, then progressively.</div>`;
+
+  const relations = (() => {
+    const r = i.relations || {};
+    const mk = (ids, label) => ids && ids.length ? `
+      <dt>${label}</dt><dd>${ids.map(rid => {
+        const o = instruments.find(x => x.id === rid);
+        return o ? `<span class="link" data-nav-id="${o.id}">${o.instrument}</span>` : rid;
+      }).join(', ')}</dd>` : '';
+    return mk(r.related, 'Related (same construct)') + mk(r.grouped_with, 'Frequently grouped with');
+  })();
+  const rilevBlock = (i.rilev && i.rilev.length) ? `
+    <dt>Rilev layer</dt><dd><strong>${i.rilev_layer}</strong> — ${i.rilev.map(r =>
+      `#${r.num}: outcomes ${r.outcomes.join(', ')}` +
+      (r.rilev_derived.length ? ` <span class="flag-yellow">⚠ derived: ${r.rilev_derived.join('; ')}</span>` : '') +
+      (r.notes ? ` <span class="count">(${r.notes})</span>` : '')
+    ).join('<br>')}</dd>` : `
+    <dt>Rilev layer</dt><dd class="count">not in Rilev 23</dd>`;
+  app.innerHTML = `
+    <a class="back link" href="#/">← Back to catalog</a>
+    <div class="card">
+      <h2>${i.instrument} <span class="count">(${i.id})</span></h2>
+      <div class="sub">${i.construct} · ${i.domain}</div>
+      <dl class="kv">
+        <dt>Provenance</dt><dd class="${flag.cls}">${flag.label}</dd>
+        <dt>Verification</dt><dd>${i.verification}</dd>
+        <dt>Evidence tier</dt><dd><span class="badge ${i.tier}">${i.tier}</span></dd>
+        <dt>Items</dt><dd>${i.depth === 'full' ? `${i.items.length} (encoded)` : (i.items ?? 'Not specified')}</dd>
+        <dt>Population</dt><dd>${i.population ?? '—'}</dd>
+        <dt>Method</dt><dd>${i.method ?? '—'}</dd>
+        <dt>Type</dt><dd>${i.type ?? '—'}</dd>
+        ${prov}
+        ${license}
+        ${rilevBlock}
+        ${relations}
+        <dt>Notes</dt><dd>${i.notes || '—'}</dd>
+      </dl>
+      ${kbLink}
+      ${deepSection}
+    </div>`;
+  app.querySelectorAll('[data-nav-id]').forEach(el =>
+    el.onclick = () => { location.hash = `#/instrument/${el.dataset.navId}`; });
+}
+
+function renderQueue() {
+  setNav('queue');
+  const rows = queue.map(r => `<tr>
+    <td><span class="link" data-id="${r.id}">${r.instrument}</span></td>
+    <td>${r.domain}<br><span class="count">${r.construct}</span></td>
+    <td><span class="badge ${r.tier}">${r.tier}</span></td>
+    <td>${r.citation ?? '—'}</td>
+    <td>${doiLink(r.doi)}</td>
+  </tr>`).join('');
+  app.innerHTML = `
+    <div class="meta-line">${queue.length} instruments with citations identified but awaiting primary-source
+      DOI verification (PubMed / Crossref / publisher). Verified: ${instruments.length - queue.length}.</div>
+    <table>
+      <thead><tr><th>Instrument</th><th>Domain / Construct</th><th>Tier</th><th>Citation</th><th>DOI</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  app.querySelectorAll('[data-id]').forEach(el =>
+    el.onclick = () => location.hash = `#/instrument/${el.dataset.id}`);
+}
+
+load();
+</script>
+</body>
+</html>

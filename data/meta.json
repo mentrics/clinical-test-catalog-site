@@ -1,0 +1,11 @@
+{
+ "generated_from": "psychological_assessment_catalog_v1.xlsx",
+ "counts": {
+  "instruments": 199,
+  "domains": 32,
+  "verification_queue": 172,
+  "verified": 27,
+  "deep_encoded": 199,
+  "kb_pages": 199
+ }
+}

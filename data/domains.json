@@ -1,0 +1,226 @@
+[
+ {
+  "domain": "Anxiety",
+  "instruments": 14,
+  "a_tier": 12,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Personality",
+  "instruments": 14,
+  "a_tier": 8,
+  "b_tier": 6,
+  "c_tier": 0
+ },
+ {
+  "domain": "Well-being",
+  "instruments": 13,
+  "a_tier": 10,
+  "b_tier": 3,
+  "c_tier": 0
+ },
+ {
+  "domain": "Mood",
+  "instruments": 12,
+  "a_tier": 10,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Trauma",
+  "instruments": 10,
+  "a_tier": 8,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Clinical",
+  "instruments": 10,
+  "a_tier": 7,
+  "b_tier": 3,
+  "c_tier": 0
+ },
+ {
+  "domain": "Substance",
+  "instruments": 9,
+  "a_tier": 8,
+  "b_tier": 1,
+  "c_tier": 0
+ },
+ {
+  "domain": "Eating",
+  "instruments": 8,
+  "a_tier": 6,
+  "b_tier": 1,
+  "c_tier": 1
+ },
+ {
+  "domain": "Sleep",
+  "instruments": 8,
+  "a_tier": 4,
+  "b_tier": 4,
+  "c_tier": 0
+ },
+ {
+  "domain": "Emotion Regulation",
+  "instruments": 7,
+  "a_tier": 5,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Attention/Executive",
+  "instruments": 7,
+  "a_tier": 6,
+  "b_tier": 1,
+  "c_tier": 0
+ },
+ {
+  "domain": "Relationships",
+  "instruments": 7,
+  "a_tier": 4,
+  "b_tier": 3,
+  "c_tier": 0
+ },
+ {
+  "domain": "Interpersonal",
+  "instruments": 7,
+  "a_tier": 5,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Neurodevelopment",
+  "instruments": 6,
+  "a_tier": 1,
+  "b_tier": 5,
+  "c_tier": 0
+ },
+ {
+  "domain": "Stress/Burnout",
+  "instruments": 6,
+  "a_tier": 5,
+  "b_tier": 1,
+  "c_tier": 0
+ },
+ {
+  "domain": "Sexuality",
+  "instruments": 6,
+  "a_tier": 4,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Positive Psychology",
+  "instruments": 5,
+  "a_tier": 3,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Values/Motivation",
+  "instruments": 4,
+  "a_tier": 2,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Physical Health",
+  "instruments": 4,
+  "a_tier": 3,
+  "b_tier": 1,
+  "c_tier": 0
+ },
+ {
+  "domain": "Social",
+  "instruments": 4,
+  "a_tier": 2,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Cognition",
+  "instruments": 4,
+  "a_tier": 4,
+  "b_tier": 0,
+  "c_tier": 0
+ },
+ {
+  "domain": "Functioning",
+  "instruments": 4,
+  "a_tier": 4,
+  "b_tier": 0,
+  "c_tier": 0
+ },
+ {
+  "domain": "Child/Adolescent",
+  "instruments": 4,
+  "a_tier": 4,
+  "b_tier": 0,
+  "c_tier": 0
+ },
+ {
+  "domain": "Behavioral Addiction",
+  "instruments": 3,
+  "a_tier": 2,
+  "b_tier": 1,
+  "c_tier": 0
+ },
+ {
+  "domain": "Repetitive Thinking",
+  "instruments": 3,
+  "a_tier": 2,
+  "b_tier": 1,
+  "c_tier": 0
+ },
+ {
+  "domain": "OCD",
+  "instruments": 3,
+  "a_tier": 3,
+  "b_tier": 0,
+  "c_tier": 0
+ },
+ {
+  "domain": "Coping",
+  "instruments": 3,
+  "a_tier": 3,
+  "b_tier": 0,
+  "c_tier": 0
+ },
+ {
+  "domain": "Psychosis/Bipolar",
+  "instruments": 3,
+  "a_tier": 1,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Suicide/Self-harm",
+  "instruments": 3,
+  "a_tier": 1,
+  "b_tier": 2,
+  "c_tier": 0
+ },
+ {
+  "domain": "Quality of Life",
+  "instruments": 3,
+  "a_tier": 3,
+  "b_tier": 0,
+  "c_tier": 0
+ },
+ {
+  "domain": "Work",
+  "instruments": 3,
+  "a_tier": 3,
+  "b_tier": 0,
+  "c_tier": 0
+ },
+ {
+  "domain": "Anger",
+  "instruments": 2,
+  "a_tier": 0,
+  "b_tier": 2,
+  "c_tier": 0
+ }
+]
