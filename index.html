@@ -209,8 +209,19 @@ function renderForm(i) {
 }
 
 function scorePilot(i, answers) {
-  const total = Object.values(answers).reduce((a, b) => a + b, 0);
+  const isMean = i.scoring.method === 'mean';
+  const total = isMean
+    ? Object.values(answers).reduce((a, b) => a + b, 0) / i.items.length
+    : Object.values(answers).reduce((a, b) => a + b, 0);
   const result = { total, band: i.scoring.cutoffs.find(c => total >= c.min && total <= c.max) };
+  if (i.scoring_rules && i.scoring_rules.subscale_scores) {
+    result.subscales = i.scoring_rules.subscale_scores.map(s => {
+      const vals = s.items.map(n => answers[n]);
+      const mean = vals.reduce((a, b) => a + b, 0) / vals.length;
+      const sum = vals.reduce((a, b) => a + b, 0);
+      return { name: s.name, score: s.method === 'sum' ? sum : mean };
+    });
+  }
   if (i.clusters) {
     result.clusters = i.clusters.map(c => ({
       name: c.name,
@@ -230,6 +241,12 @@ function scorePilot(i, answers) {
 
 function renderResult(i, answers) {
   const r = scorePilot(i, answers);
+  const scoreLabel = i.scoring.method === 'mean' ? 'Mean score' : 'Total';
+  const subscaleRows = r.subscales && r.subscales.length ? `
+    <h3>Subscale scores</h3>
+    <table style="max-width:640px"><thead><tr><th>Subscale</th><th>Score</th></tr></thead><tbody>
+      ${r.subscales.map(s => `<tr><td>${s.name}</td><td>${typeof s.score === 'number' ? s.score.toFixed(2) : s.score}</td></tr>`).join('')}
+    </tbody></table>` : '';
   const clusterRows = r.clusters ? `
     <h3>Cluster scores</h3>
     <table style="max-width:640px"><thead><tr><th>Cluster</th><th>Score</th><th>DSM-5 rule</th><th>Met?</th></tr></thead><tbody>
@@ -241,13 +258,17 @@ function renderResult(i, answers) {
       ${r.dsm5_positive ? 'cluster pattern consistent with provisional PTSD range' : 'score is in the threshold range but the DSM-5 cluster pattern is not met'}.</p>` : '';
   const itemReview = i.items.map(it =>
     `<span class="count" style="margin-right:10px">${it.number}:${answers[it.number]}</span>`).join('');
+  const totalDisplay = i.scoring.method === 'mean'
+    ? r.total.toFixed(2)
+    : r.total;
   app.innerHTML = `
     <a class="back link" href="#/instrument/${i.id}">← Back to ${i.instrument}</a>
     <div class="card">
       <h2>Result — ${i.instrument}</h2>
-      <h3 style="font-size:32px; margin:10px 0">${r.total}
-        <span class="count">/ ${i.scoring.range[1]}</span></h3>
-      <p><strong>${r.band.band}</strong> — ${r.band.interpretation}</p>
+      <h3 style="font-size:32px; margin:10px 0">${scoreLabel}
+        <span class="count" style="font-size:16px">${totalDisplay} · scale ${i.scoring.range[0]}–${i.scoring.range[1]}</span></h3>
+      <p><strong>${r.band ? r.band.band : 'No band matched'}</strong> — ${r.band ? r.band.interpretation : ''}</p>
+      ${subscaleRows}
       ${clusterRows}
       <p style="margin-top:14px">${itemReview}</p>
       <div class="depth-note">⚠ Demonstration only — computed from published scoring rules encoded in this
@@ -255,6 +276,10 @@ function renderResult(i, answers) {
       <button class="btn" id="again-btn">Take again</button>
     </div>`;
   document.getElementById('again-btn').onclick = () => renderRunner(i.id);
+}
+
+function totalLabel0(i, r) {
+  return i.scoring.method === 'mean' ? r.total.toFixed(2) : r.total;
 }
 
 function filtered() {
@@ -362,7 +387,11 @@ function renderDetail(id) {
       ${i.clusters.map(c => `<tr><td>${c.name}</td><td>${c.items.join(', ')}</td><td>${c.dsm_rule}</td></tr>`).join('')}
     </tbody></table>` : ''}
     ${i.subscale_note ? `<p class="count">Subscale note: ${i.subscale_note}</p>` : ''}
-    <div style="margin-top:16px"><a class="link" href="#/run/${i.id}">▶ Take the assessment</a></div>`
+    <div style="margin-top:16px">${i.runnable
+      ? `<a class="link" href="#/run/${i.id}">▶ Take the assessment</a>`
+      : `<span class="count">▶ Runner not available for this instrument
+         (needs item text + shared response scale + sum/mean scoring with numeric bands).
+         Scoring logic is documented above for reference.</span>`}</div>`
   : `
     <div class="depth-note">⚠ Scoring not yet encoded. Deep content (items, response options,
       scoring rules, cutoffs) arrives in v0.2 for pilot instruments, then progressively.</div>`;
