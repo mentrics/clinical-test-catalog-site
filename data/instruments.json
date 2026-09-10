@@ -6441,8 +6441,9 @@
   "provenance": {
    "flag": "green",
    "original": "Morin, C. M. (1993). Insomnia: Psychological assessment and management. Guilford Press. Validation: Bastien, C. H., Vallières, A., & Morin, C. M. (2001). Validation of the Insomnia Severity Index as an outcome measure for insomnia research. Sleep Medicine, 2(4), 297-307.",
-   "doi": "10.1016/S0165-1781(00)00305-2",
-   "scoring_reference": "Bastien et al. (2001), Table 3 (cutoff derivation)"
+   "doi": "10.1016/s1389-9457(00)00065-4",
+   "scoring_reference": "Bastien et al. (2001), Table 3 (cutoff derivation)",
+   "note": "DOI verified via Crossref 2026-09-09: original catalog row (xlsx) had 10.1016/S0165-1781(00)00305-2 which is a different paper (J Psychiatric Research); corrected to the actual Bastien 2001 Sleep Medicine DOI."
   }
  },
  {
