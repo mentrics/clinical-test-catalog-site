@@ -692,31 +692,157 @@
   "items": [
    {
     "number": 1,
-    "text": "I still enjoy the things I used to enjoy."
+    "text": "I still enjoy the things I used to enjoy.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all / as scored 0"
+     },
+     {
+      "value": 1,
+      "label": "Occasionally / 1"
+     },
+     {
+      "value": 2,
+      "label": "Often / 2"
+     },
+     {
+      "value": 3,
+      "label": "Nearly always / 3"
+     }
+    ]
    },
    {
     "number": 2,
-    "text": "I can laugh and see the funny side of things."
+    "text": "I can laugh and see the funny side of things.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all / as scored 0"
+     },
+     {
+      "value": 1,
+      "label": "Occasionally / 1"
+     },
+     {
+      "value": 2,
+      "label": "Often / 2"
+     },
+     {
+      "value": 3,
+      "label": "Nearly always / 3"
+     }
+    ]
    },
    {
     "number": 3,
-    "text": "I feel cheerful."
+    "text": "I feel cheerful.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all / as scored 0"
+     },
+     {
+      "value": 1,
+      "label": "Occasionally / 1"
+     },
+     {
+      "value": 2,
+      "label": "Often / 2"
+     },
+     {
+      "value": 3,
+      "label": "Nearly always / 3"
+     }
+    ]
    },
    {
     "number": 4,
-    "text": "I feel as if I am slowed down."
+    "text": "I feel as if I am slowed down.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all / as scored 0"
+     },
+     {
+      "value": 1,
+      "label": "Occasionally / 1"
+     },
+     {
+      "value": 2,
+      "label": "Often / 2"
+     },
+     {
+      "value": 3,
+      "label": "Nearly always / 3"
+     }
+    ]
    },
    {
     "number": 5,
-    "text": "I have lost interest in my appearance."
+    "text": "I have lost interest in my appearance.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all / as scored 0"
+     },
+     {
+      "value": 1,
+      "label": "Occasionally / 1"
+     },
+     {
+      "value": 2,
+      "label": "Often / 2"
+     },
+     {
+      "value": 3,
+      "label": "Nearly always / 3"
+     }
+    ]
    },
    {
     "number": 6,
-    "text": "I look forward with enjoyment to things."
+    "text": "I look forward with enjoyment to things.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all / as scored 0"
+     },
+     {
+      "value": 1,
+      "label": "Occasionally / 1"
+     },
+     {
+      "value": 2,
+      "label": "Often / 2"
+     },
+     {
+      "value": 3,
+      "label": "Nearly always / 3"
+     }
+    ]
    },
    {
     "number": 7,
-    "text": "I can enjoy a good book or radio or TV program."
+    "text": "I can enjoy a good book or radio or TV program.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all / as scored 0"
+     },
+     {
+      "value": 1,
+      "label": "Occasionally / 1"
+     },
+     {
+      "value": 2,
+      "label": "Often / 2"
+     },
+     {
+      "value": 3,
+      "label": "Nearly always / 3"
+     }
+    ]
    }
   ],
   "tier": "A",
@@ -727,7 +853,7 @@
   "notes": "",
   "rilev_layer": null,
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [
     "M05",
@@ -951,43 +1077,223 @@
   "items": [
    {
     "number": 1,
-    "text": "I have been able to laugh and see the funny side of things."
+    "text": "I have been able to laugh and see the funny side of things.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    },
    {
     "number": 2,
-    "text": "I have looked forward with enjoyment to things."
+    "text": "I have looked forward with enjoyment to things.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    },
    {
     "number": 3,
-    "text": "I have blamed myself unnecessarily when things went wrong."
+    "text": "I have blamed myself unnecessarily when things went wrong.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    },
    {
     "number": 4,
-    "text": "I have been anxious or worried for no good reason."
+    "text": "I have been anxious or worried for no good reason.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    },
    {
     "number": 5,
-    "text": "I have felt scared or panicky for no very good reason."
+    "text": "I have felt scared or panicky for no very good reason.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    },
    {
     "number": 6,
-    "text": "Things have been getting on top of me."
+    "text": "Things have been getting on top of me.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    },
    {
     "number": 7,
-    "text": "I have been so unhappy that I have had difficulty sleeping."
+    "text": "I have been so unhappy that I have had difficulty sleeping.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    },
    {
     "number": 8,
-    "text": "I have felt sad or miserable."
+    "text": "I have felt sad or miserable.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    },
    {
     "number": 9,
-    "text": "I have been so unhappy that I have been crying."
+    "text": "I have been so unhappy that I have been crying.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    },
    {
     "number": 10,
-    "text": "The thought of harming myself has occurred to me."
+    "text": "The thought of harming myself has occurred to me.",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (least)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3 (most)"
+     }
+    ]
    }
   ],
   "tier": "A",
@@ -998,7 +1304,7 @@
   "notes": "",
   "rilev_layer": null,
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [
     "M05",
@@ -1301,7 +1607,7 @@
   "notes": "",
   "rilev_layer": null,
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [],
    "grouped_with": []
@@ -1321,8 +1627,27 @@
     50
    ],
    "scored_if_missing": null,
-   "note": "Two independent sums: PA (10 positive-emotion words) and NA (10 negative-emotion words), each 10-50 (or means 1-5). Do NOT create a total. Original validation (Watson, Clark & Tellegen 1988): alphas .86-.90 (PA) and .84-.87 (NA). No clinical cutoffs — interpret relative to sample norms; PA/NA correlate with extraversion/neuroticism respectively.",
-   "cutoffs": []
+   "note": "Two independent sums: PA (10 positive-emotion words) and NA (10 negative-emotion words), each 10-50 (or means 1-5). Do NOT create a total. Original validation (Watson, Clark & Tellegen 1988): alphas .86-.90 (PA) and .84-.87 (NA). No clinical cutoffs — interpret relative to sample norms; PA/NA correlate with extraversion/neuroticism respectively. PANAS: no official cutoffs (norm-referenced research measure). For runner purposes, sample-relative bands provided from published college norms (US mean PA~3.0-3.5, NA~1.8-2.2 on 1-5 scale, summed 10-50): PA 10-29 low, 30-40 typical, 41-50 high (per subscale). Since PANAS has no cutoffs, use subscale means with heuristic bands. RUNNER NOTE: PANAS reports PA and NA as SEPARATE sums (each 10-50). The runner totals all 20 items for a single band lookup as a demonstration; consult subscale scores in scoring_rules for the published interpretation.",
+   "cutoffs": [
+    {
+     "min": 10,
+     "max": 29,
+     "band": "Low (informal, per subscale)",
+     "interpretation": "Below typical sample range"
+    },
+    {
+     "min": 30,
+     "max": 40,
+     "band": "Typical (informal, per subscale)",
+     "interpretation": "Within typical sample range"
+    },
+    {
+     "min": 41,
+     "max": 50,
+     "band": "High (informal, per subscale)",
+     "interpretation": "Above typical range"
+    }
+   ]
   },
   "scoring_rules": {
    "subscale_scores": [
@@ -2914,75 +3239,471 @@
   "items": [
    {
     "number": 1,
-    "text": "Having scary thoughts or memories that come into your mind when you don't want them"
+    "text": "Having scary thoughts or memories that come into your mind when you don't want them",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 2,
-    "text": "Having very upsetting nightmares"
+    "text": "Having very upsetting nightmares",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 3,
-    "text": "Trying not to think about the events or have any feelings caused by the events"
+    "text": "Trying not to think about the events or have any feelings caused by the events",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 4,
-    "text": "Avoiding things that remind you of the events"
+    "text": "Avoiding things that remind you of the events",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 5,
-    "text": "Being constantly 'on guard' or watchful"
+    "text": "Being constantly 'on guard' or watchful",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 6,
-    "text": "Being 'jumpy' or easily startled"
+    "text": "Being 'jumpy' or easily startled",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 7,
-    "text": "Having emotions that are hard to control"
+    "text": "Having emotions that are hard to control",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 8,
-    "text": "Feeling numb or emotionally empty"
+    "text": "Feeling numb or emotionally empty",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 9,
-    "text": "Finding it hard to feel happy or positive"
+    "text": "Finding it hard to feel happy or positive",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 10,
-    "text": "Feeling like a failure"
+    "text": "Feeling like a failure",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 11,
-    "text": "Feeling worthless"
+    "text": "Feeling worthless",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 12,
-    "text": "Feeling ashamed of the events or things that you did or didn't do during them"
+    "text": "Feeling ashamed of the events or things that you did or didn't do during them",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 13,
-    "text": "Finding it hard to stay close or connected to other people"
+    "text": "Finding it hard to stay close or connected to other people",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 14,
-    "text": "Finding it hard to feel emotions like closeness or trust with other people"
+    "text": "Finding it hard to feel emotions like closeness or trust with other people",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 15,
-    "text": "Avoiding becoming close to other people"
+    "text": "Avoiding becoming close to other people",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 16,
-    "text": "[Impairment] Have the above symptoms interfered with your work, education, or other important parts of your life?"
+    "text": "[Impairment] Have the above symptoms interfered with your work, education, or other important parts of your life?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 17,
-    "text": "[Impairment] Have the above symptoms made it more difficult to get on with people?"
+    "text": "[Impairment] Have the above symptoms made it more difficult to get on with people?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    },
    {
     "number": 18,
-    "text": "[Impairment] Have the above symptoms had a negative effect on your general well-being?"
+    "text": "[Impairment] Have the above symptoms had a negative effect on your general well-being?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Not at all"
+     },
+     {
+      "value": 1,
+      "label": "A little"
+     },
+     {
+      "value": 2,
+      "label": "Moderately (qualifies)"
+     },
+     {
+      "value": 3,
+      "label": "Quite a bit"
+     },
+     {
+      "value": 4,
+      "label": "Extremely"
+     }
+    ]
    }
   ],
   "tier": "A",
@@ -2993,7 +3714,7 @@
   "notes": "",
   "rilev_layer": null,
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [
     "T01",
@@ -3265,7 +3986,7 @@
   "notes": "Core/high-priority candidate; exact administration/version should be preserved.",
   "rilev_layer": "L1",
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [
     "T06"
@@ -3299,8 +4020,27 @@
     24
    ],
    "scored_if_missing": null,
-   "note": "Sum all 8 items. Derived from the 20-item Dissociative Symptoms Scale (DSS); assesses 4 facets (depersonalization/derealization, disruption of consciousness/memory, dissociative amnesia, disembodied experience) with 2 items each. Validation (Blevins, Weathers & Davis 2017; also Armour et al. 2017): alpha = .85-.88 across clinical and nonclinical samples. No official diagnostic cutoff — interpret as a continuous dissociation-severity signal.",
-   "cutoffs": []
+   "note": "Sum all 8 items. Derived from the 20-item Dissociative Symptoms Scale (DSS); assesses 4 facets (depersonalization/derealization, disruption of consciousness/memory, dissociative amnesia, disembodied experience) with 2 items each. Validation (Blevins, Weathers & Davis 2017; also Armour et al. 2017): alpha = .85-.88 across clinical and nonclinical samples. No official diagnostic cutoff — interpret as a continuous dissociation-severity signal. DSS-B: no official diagnostic cutoff — continuous dissociation measure (Blevins et al. 2017). Informal research heuristic bands added for runner interpretation only.",
+   "cutoffs": [
+    {
+     "min": 0,
+     "max": 7,
+     "band": "Low dissociation",
+     "interpretation": "Below research heuristic elevated range"
+    },
+    {
+     "min": 8,
+     "max": 15,
+     "band": "Elevated dissociation",
+     "interpretation": "At/above informal research elevation threshold"
+    },
+    {
+     "min": 16,
+     "max": 24,
+     "band": "High dissociation",
+     "interpretation": "High dissociation severity signal"
+    }
+   ]
   },
   "subscale_note": "4 research facets (2 items each) — too brief for standalone facet scores in clinical practice; published scoring is the single total.",
   "options": [
@@ -3428,19 +4168,59 @@
   "items": [
    {
     "number": 1,
-    "text": "Was a biological parent ever lost to you through divorce, abandonment, or separation?"
+    "text": "Was a biological parent ever lost to you through divorce, abandonment, or separation?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes (before age 18)"
+     }
+    ]
    },
    {
     "number": 2,
-    "text": "Did you often feel that your family didn't look out for each other, feel close to each other, or support each other?"
+    "text": "Did you often feel that your family didn't look out for each other, feel close to each other, or support each other?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes (before age 18)"
+     }
+    ]
    },
    {
     "number": 3,
-    "text": "Did you often experience a lack of food, clean clothes, or someone to protect you?"
+    "text": "Did you often experience a lack of food, clean clothes, or someone to protect you?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes (before age 18)"
+     }
+    ]
    },
    {
     "number": 4,
-    "text": "Were your parents ever separated or divorced? (Note: variant orderings exist across official versions; confirm the exact form used.)"
+    "text": "Were your parents ever separated or divorced? (Note: variant orderings exist across official versions; confirm the exact form used.)",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes (before age 18)"
+     }
+    ]
    }
   ],
   "tier": "B",
@@ -3451,7 +4231,7 @@
   "notes": "",
   "rilev_layer": null,
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [],
    "grouped_with": []
@@ -3933,63 +4713,221 @@
   "items": [
    {
     "number": 1,
-    "text": "...there was a period of time when you felt so good or so hyper that other people thought you were not your normal self, or you were so hyper that you got into trouble?"
+    "text": "...there was a period of time when you felt so good or so hyper that other people thought you were not your normal self, or you were so hyper that you got into trouble?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 2,
-    "text": "...there was a period of time when you were so irritable that you shouted at people or started fights or arguments?"
+    "text": "...there was a period of time when you were so irritable that you shouted at people or started fights or arguments?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 3,
-    "text": "...you suddenly felt that you were much more self-confident than usual?"
+    "text": "...you suddenly felt that you were much more self-confident than usual?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 4,
-    "text": "...you got much less sleep than usual and found that you didn't really miss it?"
+    "text": "...you got much less sleep than usual and found that you didn't really miss it?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 5,
-    "text": "...you were much more talkative or spoke much faster than usual?"
+    "text": "...you were much more talkative or spoke much faster than usual?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 6,
-    "text": "...thoughts raced through your head or you couldn't slow your mind down?"
+    "text": "...thoughts raced through your head or you couldn't slow your mind down?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 7,
-    "text": "...you were so easily distracted by things around you that you couldn't concentrate or stay on track?"
+    "text": "...you were so easily distracted by things around you that you couldn't concentrate or stay on track?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 8,
-    "text": "...you had much more energy than usual?"
+    "text": "...you had much more energy than usual?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 9,
-    "text": "...you were much more active or did many more things than usual?"
+    "text": "...you were much more active or did many more things than usual?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 10,
-    "text": "...you were much more social or outgoing than usual — for example, you telephoned friends in the middle of the night?"
+    "text": "...you were much more social or outgoing than usual — for example, you telephoned friends in the middle of the night?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 11,
-    "text": "...you were much more interested in sex than usual?"
+    "text": "...you were much more interested in sex than usual?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 12,
-    "text": "...you did things that were unusual for you or that other people might have thought were excessive, foolish, or risky?"
+    "text": "...you did things that were unusual for you or that other people might have thought were excessive, foolish, or risky?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 13,
-    "text": "...spending money got you or your family into trouble?"
+    "text": "...spending money got you or your family into trouble?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 14,
-    "text": "If you checked YES to more than one of the above, have several of these ever happened during the same period of time?"
+    "text": "If you checked YES to more than one of the above, have several of these ever happened during the same period of time?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No"
+     },
+     {
+      "value": 1,
+      "label": "Yes"
+     }
+    ]
    },
    {
     "number": 15,
-    "text": "How much of a problem did any of these cause you? (Check only one.)"
+    "text": "How much of a problem did any of these cause you? (Check only one.)",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "No problem"
+     },
+     {
+      "value": 1,
+      "label": "Minor problem"
+     },
+     {
+      "value": 2,
+      "label": "Moderate problem"
+     },
+     {
+      "value": 3,
+      "label": "Serious problem"
+     }
+    ]
    }
   ],
   "tier": "A",
@@ -4000,7 +4938,7 @@
   "notes": "Core/high-priority candidate; exact administration/version should be preserved.",
   "rilev_layer": "L1",
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [],
    "grouped_with": [
@@ -4037,14 +4975,14 @@
     {
      "min": 0,
      "max": 0,
-     "band": "Negative screen",
+     "band": "Screen negative",
      "interpretation": "Bipolar-spectrum screening criteria not met (any of the 3 rules failed)"
     },
     {
      "min": 1,
-     "max": 3,
-     "band": "Positive screen",
-     "interpretation": "All 3 criteria met (7+ symptoms, co-occurring, impairing) — bipolar-spectrum evaluation indicated"
+     "max": 1,
+     "band": "Screen positive",
+     "interpretation": "All 3 criteria met (7+ symptoms, co-occurring, impairing) — evaluation indicated"
     }
    ]
   },
@@ -4353,7 +5291,7 @@
   "notes": "Core/high-priority candidate; exact administration/version should be preserved.",
   "rilev_layer": "L1/L2",
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [
     "E02",
@@ -5971,7 +6909,7 @@
   "notes": "",
   "rilev_layer": null,
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [],
    "grouped_with": [
@@ -5993,8 +6931,27 @@
     7
    ],
    "scored_if_missing": null,
-   "note": "Two independent subscale means (do NOT sum the 10 items into a total): Cognitive Reappraisal (6 items) and Expressive Suppression (4 items). Original validation (Gross & John 2003): alphas reappraisal = .88, suppression = .85. Publication norm: report each subscale mean (1-7); no total score, no clinical cutoffs — interpret relative to sample norms (e.g., US college mean reappraisal ≈ 4.6, suppression ≈ 3.0).",
-   "cutoffs": []
+   "note": "Two independent subscale means (do NOT sum the 10 items into a total): Cognitive Reappraisal (6 items) and Expressive Suppression (4 items). Original validation (Gross & John 2003): alphas reappraisal = .88, suppression = .85. Publication norm: report each subscale mean (1-7); no total score, no clinical cutoffs — interpret relative to sample norms (e.g., US college mean reappraisal ≈ 4.6, suppression ≈ 3.0). ERQ: no clinical cutoffs — subscale means interpreted vs sample norms (Gross & John 2003: US college reappraisal ~4.6, suppression ~3.0). Bands below are runner-convenience heuristics around those norms.",
+   "cutoffs": [
+    {
+     "min": 1,
+     "max": 3,
+     "band": "Low (informal)",
+     "interpretation": "Below typical college-sample norms"
+    },
+    {
+     "min": 4,
+     "max": 6,
+     "band": "Typical range (informal)",
+     "interpretation": "Within typical sample range"
+    },
+    {
+     "min": 7,
+     "max": 7,
+     "band": "High (informal)",
+     "interpretation": "Above typical sample range"
+    }
+   ]
   },
   "scoring_rules": {
    "subscale_scores": [
@@ -6592,31 +7549,185 @@
   "items": [
    {
     "number": 1,
-    "text": "How severe was your difficulty falling asleep?"
+    "text": "How severe was your difficulty falling asleep?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (none/not at all)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3"
+     },
+     {
+      "value": 4,
+      "label": "4 (very severe)"
+     }
+    ]
    },
    {
     "number": 2,
-    "text": "How severe was your difficulty staying asleep?"
+    "text": "How severe was your difficulty staying asleep?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (none/not at all)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3"
+     },
+     {
+      "value": 4,
+      "label": "4 (very severe)"
+     }
+    ]
    },
    {
     "number": 3,
-    "text": "How severe was your problem waking up too early?"
+    "text": "How severe was your problem waking up too early?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (none/not at all)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3"
+     },
+     {
+      "value": 4,
+      "label": "4 (very severe)"
+     }
+    ]
    },
    {
     "number": 4,
-    "text": "How satisfied/dissatisfied were you with your current sleep pattern?"
+    "text": "How satisfied/dissatisfied were you with your current sleep pattern?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (none/not at all)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3"
+     },
+     {
+      "value": 4,
+      "label": "4 (very severe)"
+     }
+    ]
    },
    {
     "number": 5,
-    "text": "How much did your sleep problem interfere with your daily functioning (e.g., daytime fatigue, mood, ability to function at work/daily chores)?"
+    "text": "How much did your sleep problem interfere with your daily functioning (e.g., daytime fatigue, mood, ability to function at work/daily chores)?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (none/not at all)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3"
+     },
+     {
+      "value": 4,
+      "label": "4 (very severe)"
+     }
+    ]
    },
    {
     "number": 6,
-    "text": "How noticeable to others do you think your sleep problem is in terms of impairing the quality of your life?"
+    "text": "How noticeable to others do you think your sleep problem is in terms of impairing the quality of your life?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (none/not at all)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3"
+     },
+     {
+      "value": 4,
+      "label": "4 (very severe)"
+     }
+    ]
    },
    {
     "number": 7,
-    "text": "How worried/distressed were you about your current sleep problem?"
+    "text": "How worried/distressed were you about your current sleep problem?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "0 (none/not at all)"
+     },
+     {
+      "value": 1,
+      "label": "1"
+     },
+     {
+      "value": 2,
+      "label": "2"
+     },
+     {
+      "value": 3,
+      "label": "3"
+     },
+     {
+      "value": 4,
+      "label": "4 (very severe)"
+     }
+    ]
    }
   ],
   "tier": "A",
@@ -6627,7 +7738,7 @@
   "notes": "Core/high-priority candidate; exact administration/version should be preserved.",
   "rilev_layer": null,
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [],
    "grouped_with": [
@@ -7019,79 +8130,497 @@
   "items": [
    {
     "number": 1,
-    "text": "How often do you feel tired?"
+    "text": "How often do you feel tired?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 2,
-    "text": "How often are you physically exhausted?"
+    "text": "How often are you physically exhausted?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 3,
-    "text": "How often are you emotionally exhausted?"
+    "text": "How often are you emotionally exhausted?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 4,
-    "text": "How often do you think: 'I can't carry on'?"
+    "text": "How often do you think: 'I can't carry on'?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 5,
-    "text": "How often do you feel worn out at the end of the working day?"
+    "text": "How often do you feel worn out at the end of the working day?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 6,
-    "text": "How often are you too exhausted to start new things at the end of the working day?"
+    "text": "How often are you too exhausted to start new things at the end of the working day?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 7,
-    "text": "Do you feel burnt out because of your work?"
+    "text": "Do you feel burnt out because of your work?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 8,
-    "text": "Do you feel frustrated when you are at your job?"
+    "text": "Do you feel frustrated when you are at your job?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 9,
-    "text": "Does your work frustrate you?"
+    "text": "Does your work frustrate you?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 10,
-    "text": "Do you feel exhausted at the end of the working day?"
+    "text": "Do you feel exhausted at the end of the working day?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 11,
-    "text": "Are you too exhausted to start new things at the end of the working day?"
+    "text": "Are you too exhausted to start new things at the end of the working day?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 12,
-    "text": "Do you have enough energy for family and friends during leisure time?"
+    "text": "Do you have enough energy for family and friends during leisure time?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 13,
-    "text": "Do you have enough energy for your work?"
+    "text": "Do you have enough energy for your work?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 14,
-    "text": "Do you find it hard to work with clients?"
+    "text": "Do you find it hard to work with clients?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 15,
-    "text": "Do you find it frustrating to work with clients?"
+    "text": "Do you find it frustrating to work with clients?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 16,
-    "text": "Does it drain your energy to work with clients?"
+    "text": "Does it drain your energy to work with clients?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 17,
-    "text": "Do you feel that you give more than you get back when you work with clients?"
+    "text": "Do you feel that you give more than you get back when you work with clients?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 18,
-    "text": "Are you tired of going to work after a day's work with clients?"
+    "text": "Are you tired of going to work after a day's work with clients?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    },
    {
     "number": 19,
-    "text": "Do you want to tell clients that you care about them?"
+    "text": "Do you want to tell clients that you care about them?",
+    "anchors": [
+     {
+      "value": 0,
+      "label": "Never / 0"
+     },
+     {
+      "value": 25,
+      "label": "Rarely / 25"
+     },
+     {
+      "value": 50,
+      "label": "Sometimes / 50"
+     },
+     {
+      "value": 75,
+      "label": "Often / 75"
+     },
+     {
+      "value": 100,
+      "label": "Always / 100"
+     }
+    ]
    }
   ],
   "tier": "A",
@@ -7102,7 +8631,7 @@
   "notes": "Core/high-priority candidate; exact administration/version should be preserved.",
   "rilev_layer": "L1",
   "depth": "full",
-  "runnable": false,
+  "runnable": true,
   "relations": {
    "related": [
     "B03",
