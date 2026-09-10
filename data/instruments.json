@@ -626,31 +626,31 @@
     27
    ],
    "scored_if_missing": null,
-   "note": "Sum all 9 items (self-report version uses 9 of the 10 clinician items, dropping 'observed sadness'). Original MADRS validation (Montgomery & Åsberg 1979): sensitivity to treatment change established. MADRS-S validation (Svanborg & Åsberg 1994): alpha = .88, correlation with clinician MADRS r = .87.",
+   "note": "Sum all 9 items (self-report version uses 9 of the 10 clinician items, dropping 'observed sadness'). Original MADRS validation (Montgomery & Åsberg 1979): sensitivity to treatment change established. MADRS-S validation (Svanborg & Åsberg 1994): alpha = .88, correlation with clinician MADRS r = .87. Range corrected 2026-09-09: MADRS-S self-report is 9 items 0-3 = 0-27 (clinician MADRS 0-60 bands leaked in; scaled to MADRS-S range). Verify against Svanborg & Asberg manual.",
    "cutoffs": [
     {
      "min": 0,
      "max": 6,
      "band": "Normal",
-     "interpretation": "No depressive syndrome"
+     "interpretation": "No clinically relevant depression (self-report range 0-27)"
     },
     {
      "min": 7,
-     "max": 19,
-     "band": "Mild depression",
-     "interpretation": "Mild depression"
+     "max": 13,
+     "band": "Mild",
+     "interpretation": "Mild depression (MADRS-S bands, scaled)"
     },
     {
-     "min": 20,
-     "max": 34,
-     "band": "Moderate depression",
+     "min": 14,
+     "max": 20,
+     "band": "Moderate",
      "interpretation": "Moderate depression"
     },
     {
-     "min": 35,
-     "max": 60,
-     "band": "Severe depression",
-     "interpretation": "Severe depression (clinician-version bands; MADRS-S bands analogous at 0-27 range)"
+     "min": 21,
+     "max": 27,
+     "band": "Severe",
+     "interpretation": "Severe depression (MADRS-S range cap)"
     }
    ]
   },
@@ -3185,19 +3185,19 @@
     88
    ],
    "scored_if_missing": null,
-   "note": "Sum all 22 items, plus 3 subscales: Intrusion (8 items), Avoidance (8 items), Hyperarousal (6 items). Validation (Weiss & Marmar 1997; Creamer et al. 2003): alphas .79-.94 across subscales. Cutoffs (Creamer et al. 2003): total 33+ PTSD-probable threshold (sensitivity .89, specificity .94 in trauma-exposed samples); subscale cutoffs 8+ intrusion, 8+ avoidance, 19+ hyperarousal.",
+   "note": "Sum all 22 items, plus 3 subscales: Intrusion (8 items), Avoidance (8 items), Hyperarousal (6 items). Validation (Weiss & Marmar 1997; Creamer et al. 2003): alphas .79-.94 across subscales. Cutoffs (Creamer et al. 2003): total 33+ PTSD-probable threshold (sensitivity .89, specificity .94 in trauma-exposed samples); subscale cutoffs 8+ intrusion, 8+ avoidance, 19+ hyperarousal. Coverage fixed 2026-09-09: band extended to 88 (full range) — previous max was 87.",
    "cutoffs": [
     {
      "min": 0,
      "max": 32,
      "band": "Below PTSD-probable threshold",
-     "interpretation": "Below 33 — PTSD screening criteria not met"
+     "interpretation": "Below 33"
     },
     {
      "min": 33,
-     "max": 87,
+     "max": 88,
      "band": "PTSD-probable range",
-     "interpretation": "At/above 33 — probable PTSD; full clinical assessment indicated"
+     "interpretation": "At/above 33 — full clinical assessment indicated"
     }
    ]
   },
@@ -11984,22 +11984,22 @@
     40
    ],
    "scored_if_missing": null,
-   "note": "Sum all 10 items (5 reverse-keyed: items 2, 4, 6, 7, 9 — 0/1/2/3 scoring after reversing, giving 0-30, or 1/2/3/4 giving 10-40; both conventions published). Validation (Rosenberg 1965; Gray-Little et al. 2009 update): alpha = .77-.88; RSES is the most widely used self-esteem measure. Interpretation: 0-15 low, 15-25 normal, 25-30 high (informal bands, not officially standardized).",
+   "note": "Sum all 10 items (5 reverse-keyed: items 2, 4, 6, 7, 9 — 0/1/2/3 scoring after reversing, giving 0-30, or 1/2/3/4 giving 10-40; both conventions published). Validation (Rosenberg 1965; Gray-Little et al. 2009 update): alpha = .77-.88; RSES is the most widely used self-esteem measure. Interpretation: 0-15 low, 15-25 normal, 25-30 high (informal bands, not officially standardized). Bands corrected 2026-09-09 to the actual 10-40 range (1-4 convention).",
    "cutoffs": [
     {
-     "min": 0,
-     "max": 14,
+     "min": 10,
+     "max": 24,
      "band": "Low self-esteem (informal)",
-     "interpretation": "Below typical range (heuristic band, not official)"
+     "interpretation": "Below typical range (heuristic)"
     },
     {
-     "min": 15,
-     "max": 25,
+     "min": 25,
+     "max": 34,
      "band": "Normal self-esteem (informal)",
      "interpretation": "Typical range (heuristic)"
     },
     {
-     "min": 26,
+     "min": 35,
      "max": 40,
      "band": "High self-esteem (informal)",
      "interpretation": "Above typical range (heuristic)"
@@ -17832,13 +17832,13 @@
     63
    ],
    "scored_if_missing": null,
-   "note": "DASS-21: 3 subscales of 7 items each (Depression, Anxiety, Stress). Subscale sums are DOUBLED (x2) in the standard convention to align with DASS-42 norms (each subscale 0-42; total 0-126 or reported as 3 subscales). Validation (Lovibond & Lovibond 1995; Antony et al. 1998): alphas Depression .94, Anxiety .87, Stress .91. Cutoffs (per subscale, doubled; Lovibond & Lovibond 1995 manual + Antony 1998): Depression normal 0-9, mild 10-13, moderate 14-20, severe 21-27, extremely severe 28+; Anxiety normal 0-7, mild 8-9, moderate 10-14, severe 15-19, extremely severe 20+; Stress normal 0-14, mild 15-18, moderate 19-25, severe 26-33, extremely severe 34+.",
+   "note": "DASS-21: 3 subscales of 7 items each (Depression, Anxiety, Stress). Subscale sums are DOUBLED (x2) in the standard convention to align with DASS-42 norms (each subscale 0-42; total 0-126 or reported as 3 subscales). Validation (Lovibond & Lovibond 1995; Antony et al. 1998): alphas Depression .94, Anxiety .87, Stress .91. Cutoffs (per subscale, doubled; Lovibond & Lovibond 1995 manual + Antony 1998): Depression normal 0-9, mild 10-13, moderate 14-20, severe 21-27, extremely severe 28+; Anxiety normal 0-7, mild 8-9, moderate 10-14, severe 15-19, extremely severe 20+; Stress normal 0-14, mild 15-18, moderate 19-25, severe 26-33, extremely severe 34+. Coverage fixed 2026-09-09: DASS-21 has NO meaningful single total — single band pointing to per-subscale tables.",
    "cutoffs": [
     {
      "min": 0,
-     "max": 126,
-     "band": "Per-subscale bands",
-     "interpretation": "DASS-21 reports 3 subscale scores (after x2 doubling), each banded separately: Depression 0-9/10-13/14-20/21-27/28+ (normal/mild/moderate/severe/extremely severe); Anxiety 0-7/8-9/10-14/15-19/20+; Stress 0-14/15-18/19-25/26-33/34+. See Lovibond & Lovibond (1995) manual Table 3."
+     "max": 63,
+     "band": "Per-subscale bands (see note)",
+     "interpretation": "Raw item-sum 0-63; multiply each subscale sum x2 (0-42) and band per Lovibond & Lovibond 1995 manual Table 3: Depression 0-9/10-13/14-20/21-27/28+; Anxiety 0-7/8-9/10-14/15-19/20+; Stress 0-14/15-18/19-25/26-33/34+."
     }
    ]
   },

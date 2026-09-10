@@ -7,6 +7,8 @@
   "verified": 27,
   "deep_encoded": 199,
   "kb_pages": 199,
-  "runnable": 20
+  "runnable": 20,
+  "demo_mode": false,
+  "demo_instruments": 0
  }
 }

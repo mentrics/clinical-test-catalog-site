@@ -164,16 +164,36 @@ function renderRunner(id) {
   document.getElementById('start-btn').onclick = () => renderForm(i);
 }
 
+function demoAnchorsFor(i, itemNumber) {
+  // Generic anchors for simulated items: derive from scoring range per item
+  const sc = i.scoring || {};
+  const [lo, hi] = sc.range || [0, 3];
+  const perItemMax = Math.round(hi / Math.max(1, i.items.length) * (i.scoring.method === 'mean' ? 0 : 0));
+  // generic per-item scale: 0..3 for most instruments; use catalog response_scale hint
+  const n = 4;
+  const anchors = [];
+  for (let v = 0; v < n; v++) {
+    anchors.push({ value: v, label: v === 0 ? 'Not at all / lowest' : v === n - 1 ? 'Extremely / highest' : String(v) });
+  }
+  return anchors;
+}
+
 function renderForm(i) {
-  // Support two item formats:
-  //   shared options: i.options = [{value,label},...] → radio grid columns
-  //   per-item anchors: i.items[n].anchors = [{value,label},...] → select dropdown per item
+  // Support three item formats:
+  //   shared options: i.options → radio grid columns
+  //   per-item anchors: i.items[n].anchors → select dropdown per item
+  //   demo items (internal): i.items_demo=true → simulated items, scored with real rules
   const perItem = !Array.isArray(i.options);
   let rows;
   let thead = '<thead><tr><th>Item</th><th style="width:340px">Answer</th></tr></thead>';
   if (perItem) {
+    // demo items get generic 0..maxVal anchors derived from scoring range
+    const demoRange = i.items_demo ? null : null;
     rows = i.items.map(it => {
-      const anchors = it.anchors || [];
+      const anchors = it.anchors || (i.items_demo
+        ? demoAnchorsFor(i, it.number)
+        : null);
+      if (!anchors) return null;
       const sel = anchors.map(a =>
         `<option value="${a.value}">${a.value} — ${a.label}</option>`).join('');
       return `<tr data-item="${it.number}">
@@ -181,7 +201,7 @@ function renderForm(i) {
       <td><select name="item-${it.number}" style="width:100%; padding:6px; background:var(--panel); color:var(--text); border:1px solid var(--border); border-radius:4px">
         <option value="">—</option>${sel}</select></td>
     </tr>`;
-    }).join('');
+    }).filter(Boolean).join('');
   } else {
     thead = `<thead><tr><th>Item</th>${i.options.map(o =>
       `<th style="text-align:center">${o.label}<br><span class="count">${o.value}</span></th>`).join('')}</tr></thead>`;
@@ -195,11 +215,17 @@ function renderForm(i) {
         </td>`).join('')}
     </tr>`).join('');
   }
+  const demoWarn = i.items_demo ? `
+    <p class="flag-yellow" style="margin-top:8px">⚠ DEMO MODE: items below are <strong>simulated
+    placeholders</strong> (official text is licensed and withheld). The scoring engine and
+    interpretation bands are the real published rules. For internal demonstration only —
+    not for administration.</p>` : '';
   app.innerHTML = `
     <a class="back link" href="#/instrument/${i.id}">← Cancel</a>
     <div class="card" style="max-width:900px">
       <h2>${i.instrument} <span class="count">(${i.id})</span></h2>
       <p class="count">Select one answer per item, then submit.</p>
+      ${demoWarn}
       <form id="run-form">
       <table>${thead}<tbody>${rows}</tbody></table>
       <div style="margin-top:16px">
@@ -447,6 +473,24 @@ function renderDetail(id) {
       📘 <a class="link" href="kb/${i.id}.md" target="_blank" rel="noopener">Plain-language guide</a>
       — what this test measures, how scoring works, what the scores mean (for non-experts).
     </div>` : '';
+  const vendorPanel = (!i.runnable && i.depth === 'full' && i.items_restricted) ? `
+    <div class="depth-note" style="border-color: var(--yellow)">
+      <strong>Why the interactive runner is unavailable here:</strong>
+      the official item text of ${i.instrument} is proprietary
+      (license status: <strong>${i.license ? i.license.status : 'restricted'}</strong>).
+      The scoring logic, cutoffs and interpretation shown above are the published rules;
+      the licensed question text is deliberately not reproduced on the public site.
+      <br><br><strong>Options to run this instrument:</strong>
+      <ul style="margin:6px 0 0; padding-left:20px">
+        <li><strong>Purchase / license</strong> from the rights holder — see the vendor notes
+          below and the license status listed here.</li>
+        <li>Verify the scoring with the <a class="link" href="kb/${i.id}.md" target="_blank" rel="noopener">plain-language guide</a>
+          and the original publication (DOI above).</li>
+        <li>If you have a licensed copy of the instrument, scoring can be done manually
+          against the rules documented on this page.</li>
+      </ul>
+      ${i.license && i.license.note ? `<br><span class="count">License detail: ${i.license.note}</span>` : ''}
+    </div>` : '';
   const deepSection = i.depth === 'full' ? `
     <h3 style="margin-top:20px">Items (${i.items.length})</h3>
     <p class="count">Response scale: ${i.response_scale}</p>
@@ -516,6 +560,7 @@ function renderDetail(id) {
         <dt>Notes</dt><dd>${i.notes || '—'}</dd>
       </dl>
       ${kbLink}
+      ${vendorPanel}
       ${deepSection}
     </div>`;
   app.querySelectorAll('[data-nav-id]').forEach(el =>
