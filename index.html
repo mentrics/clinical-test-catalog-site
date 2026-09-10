@@ -60,7 +60,7 @@ a:hover, .link:hover { text-decoration: underline; }
 <script>
 const app = document.getElementById('app');
 let instruments = [], domains = [], queue = [], rilev = {instruments: []};
-const state = { q: '', domain: '', tier: '', verification: '' };
+const state = { q: '', domain: '', tier: '', verification: '', runner: '' };
 
 const FLAG = {
   green:  { label: 'Well established',        cls: 'flag-green' },
@@ -387,12 +387,21 @@ function totalLabel0(i, r) {
   return i.scoring.method === 'mean' ? r.total.toFixed(2) : r.total;
 }
 
+function matchRunner(i, sel) {
+  if (!sel) return true;
+  if (sel === 'coded') return i.runnable && !i.items_demo;
+  if (sel === 'demo') return i.runnable && !!i.items_demo;
+  if (sel === 'withheld') return !!i.items_restricted;
+  return true;
+}
+
 function filtered() {
   const q = state.q.toLowerCase();
   return instruments.filter(i =>
     (!state.domain || i.domain === state.domain) &&
     (!state.tier || i.tier === state.tier) &&
     (!state.verification || i.verification === state.verification) &&
+    (matchRunner(i, state.runner)) &&
     (!q || [i.instrument, i.construct, i.citation, i.id].join(' ').toLowerCase().includes(q)));
 }
 
@@ -402,6 +411,11 @@ function renderCatalog() {
     `<option value="${v}" ${v === cur ? 'selected' : ''}>${v}</option>`).join('');
   const rows = filtered().map(i => {
     const f = FLAG[flagOf(i)];
+    const lic = i.license ? i.license.status : 'unknown';
+    const licCls = lic.includes('free') || lic.includes('public') ? 'flag-green'
+      : lic === 'restricted' ? 'flag-red' : 'flag-yellow';
+    const run = i.runnable ? (i.items_demo ? '<span class="badge B">demo</span>' : '<span class="badge A">coded</span>')
+      : (i.items_restricted ? '<span class="count">text withheld</span>' : '<span class="count">—</span>');
     return `<tr>
       <td><span class="link" data-id="${i.id}">${i.instrument}</span><br><span class="count">${i.id}</span></td>
       <td>${i.domain}<br><span class="count">${i.construct}</span></td>
@@ -409,6 +423,8 @@ function renderCatalog() {
       <td>${i.catalog_items ?? i.items ?? '—'}</td>
       <td class="${f.cls}">${f.label}<br><span class="count">${i.verification}</span></td>
       <td>${i.population ?? '—'}</td>
+      <td><span class="badge" style="border-color:inherit">${lic}</span></td>
+      <td>${run}</td>
     </tr>`;
   }).join('');
   app.innerHTML = `
@@ -420,13 +436,14 @@ function renderCatalog() {
       <select id="f-domain"><option value="">All domains</option>${opts(domains.map(d => d.domain), state.domain)}</select>
       <select id="f-tier"><option value="">All tiers</option>${opts(['A', 'B', 'C'], state.tier)}</select>
       <select id="f-verif"><option value="">All verification</option>${opts(['Verified', 'Reference identified'], state.verification)}</select>
+      <select id="f-runner"><option value="">Runner: any</option><option value="coded" ${state.runner === 'coded' ? 'selected' : ''}>Runner: coded</option><option value="demo">Runner: demo</option><option value="withheld">Runner: text withheld</option></select>
     </div>
     <table>
-      <thead><tr><th>Instrument</th><th>Domain / Construct</th><th>Tier</th><th>Items</th><th>Provenance</th><th>Population</th></tr></thead>
-      <tbody>${rows || '<tr><td colspan="6" class="empty">No matches</td></tr>'}</tbody>
+      <thead><tr><th>Instrument</th><th>Domain / Construct</th><th>Tier</th><th>Items</th><th>Provenance</th><th>Population</th><th>License</th><th>Runner</th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="8" class="empty">No matches</td></tr>'}</tbody>
     </table>`;
   document.getElementById('f-q').oninput = e => { state.q = e.target.value; refreshRows(); };
-  for (const [id, key] of [['f-domain', 'domain'], ['f-tier', 'tier'], ['f-verif', 'verification']])
+  for (const [id, key] of [['f-domain', 'domain'], ['f-tier', 'tier'], ['f-verif', 'verification'], ['f-runner', 'runner']])
     document.getElementById(id).onchange = e => { state[key] = e.target.value; refreshRows(); };
   app.querySelectorAll('[data-id]').forEach(el =>
     el.onclick = () => location.hash = `#/instrument/${el.dataset.id}`);
@@ -436,14 +453,21 @@ function refreshRows() { // re-render list only, keep focus in search box
   const rows = filtered();
   const tbody = app.querySelector('tbody');
   const f = i => FLAG[flagOf(i)];
-  tbody.innerHTML = rows.map(i => `<tr>
+  tbody.innerHTML = rows.map(i => {
+    const lic = i.license ? i.license.status : 'unknown';
+    const run = i.runnable ? (i.items_demo ? '<span class="badge B">demo</span>' : '<span class="badge A">coded</span>')
+      : (i.items_restricted ? '<span class="count">text withheld</span>' : '<span class="count">—</span>');
+    return `<tr>
       <td><span class="link" data-id="${i.id}">${i.instrument}</span><br><span class="count">${i.id}</span></td>
       <td>${i.domain}<br><span class="count">${i.construct}</span></td>
       <td><span class="badge ${i.tier}">${i.tier}</span></td>
       <td>${i.catalog_items ?? i.items ?? '—'}</td>
       <td class="${f(i).cls}">${f(i).label}<br><span class="count">${i.verification}</span></td>
       <td>${i.population ?? '—'}</td>
-    </tr>`).join('') || '<tr><td colspan="6" class="empty">No matches</td></tr>';
+      <td>${lic}</td>
+      <td>${run}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="8" class="empty">No matches</td></tr>';
   tbody.querySelectorAll('[data-id]').forEach(el =>
     el.onclick = () => location.hash = `#/instrument/${el.dataset.id}`);
 }
@@ -470,7 +494,7 @@ function renderDetail(id) {
     <dt>License</dt><dd><strong>${i.license.status}</strong> — ${i.license.note}</dd>` : '';
   const kbLink = i.depth === 'full' ? `
     <div class="depth-note" style="border-color: var(--green); background: #12201a">
-      📘 <a class="link" href="kb/${i.id}.md" target="_blank" rel="noopener">Plain-language guide</a>
+      📘 <a class="link" href="kb-html/${i.id}.html" target="_blank" rel="noopener">Plain-language guide</a>
       — what this test measures, how scoring works, what the scores mean (for non-experts).
     </div>` : '';
   const vendorPanel = (!i.runnable && i.depth === 'full' && i.items_restricted) ? `
@@ -484,7 +508,7 @@ function renderDetail(id) {
       <ul style="margin:6px 0 0; padding-left:20px">
         <li><strong>Purchase / license</strong> from the rights holder — see the vendor notes
           below and the license status listed here.</li>
-        <li>Verify the scoring with the <a class="link" href="kb/${i.id}.md" target="_blank" rel="noopener">plain-language guide</a>
+        <li>Verify the scoring with the <a class="link" href="kb-html/${i.id}.html" target="_blank" rel="noopener">plain-language guide</a>
           and the original publication (DOI above).</li>
         <li>If you have a licensed copy of the instrument, scoring can be done manually
           against the rules documented on this page.</li>
