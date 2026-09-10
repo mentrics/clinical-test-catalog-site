@@ -408,7 +408,24 @@
    "original": "Radloff, L. S. (1977). The CES-D scale: A self-report depression scale for research in the general population. Applied Psychological Measurement, 1(3), 385-401.",
    "doi": "10.1177/014662167700100306",
    "scoring_reference": "Radloff (1977), Table 2 scoring instructions and cutoff discussion",
-   "note": "DOI verified via Crossref 2026-09-09: catalog xlsx had 10.1177/001316447703300601 (Educational and Psychological Measurement — wrong); correct is Applied Psychological Measurement 1(3), 385-401."
+   "note": "DOI verified via Crossref 2026-09-09: catalog xlsx had 10.1177/001316447703300601 (Educational and Psychological Measurement — wrong); correct is Applied Psychological Measurement 1(3), 385-401.",
+   "doi_candidates": [
+    {
+     "doi": "10.1177/014662167700100306",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "The CES-D Scale (Applied Psychological Measurement 1(3):385-401)",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1177/001316447703300601",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -644,7 +661,24 @@
    "original": "Montgomery, S. A., & Åsberg, M. (1979). A new depression scale designed to be sensitive to change. British Journal of Psychiatry, 134(4), 382-389. Self-report adaptation: Svanborg, P., & Åsberg, M. (1994). A new self-rating scale for depression and anxiety states based on the CPRS. Nordic Journal of Psychiatry, 48(1), 21-27.",
    "doi": "10.1016/0165-0327(94)90080-9",
    "scoring_reference": "Svanborg & Åsberg (1994) for MADRS-S psychometrics; Montgomery & Åsberg (1979) for cutoffs",
-   "note": "Catalog row cites Svanborg & Åsberg (1994) DOI. Cutoff ranges above combine clinician-version MADRS bands with MADRS-S 0-27 range — verify against the specific MADRS-S manual for exact self-report bands before clinical use. Runner not enabled."
+   "note": "Catalog row cites Svanborg & Åsberg (1994) DOI. Cutoff ranges above combine clinician-version MADRS bands with MADRS-S 0-27 range — verify against the specific MADRS-S manual for exact self-report bands before clinical use. Runner not enabled.",
+   "doi_candidates": [
+    {
+     "doi": "10.1111/j.1600-0447.1994.tb01480.x",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "A new self-rating scale for depression and anxiety states based on the CPRS (Acta Psychiatr Scand 89(1):21-28) — catalog DOI 10.1016/0165-0327(94)90080-9 is a Journal of Affective Disorders paper (different); Svanborg & Asberg 1994 has TWO papers, catalog cites Nordic J Psychiatry 48(1):21-27 which matches neither exactly",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/0165-0327(94)90080-9",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -886,7 +920,24 @@
    "flag": "green",
    "original": "Kroenke, K., Spitzer, R. L., & Williams, J. B. W. (2001). The PHQ-9 (PHQ-8 subset). Journal of General Internal Medicine, 16(9), 606-613. PHQ-8 as BRFSS module: Centers for Disease Control and Prevention (2006+).",
    "doi": "10.1046/j.1525-1497.2001.016009606.x",
-   "scoring_reference": "PHQ-9/PHQ-8 official scoring; BRFSS PHQ-8 module documentation"
+   "scoring_reference": "PHQ-9/PHQ-8 official scoring; BRFSS PHQ-8 module documentation",
+   "doi_candidates": [
+    {
+     "doi": "10.1097/00006842-200203000-00008",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "No distinct PHQ-8 journal paper found; PHQ-8 is documented within the PHQ-9 paper (Kroenke 2001) + CDC BRFSS surveillance docs. Catalog DOI 10.1007/s11606-009-1035-x needs checking — likely a different PHQ-8 paper (Kroenke et al. 2009 Psychosomatics?). Flag for manual review.",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1007/s11606-009-1035-x",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -1063,7 +1114,24 @@
    "original": "Snaith, R. P., Hamilton, M., Morley, S., Humayan, A., Hargreaves, D., & Trigwell, P. (1995). A scale for the assessment of hedonic tone: The Snaith-Hamilton Pleasure Scale. British Journal of Psychiatry, 167(1), 99-103.",
    "doi": "10.1192/bjp.167.1.99",
    "scoring_reference": "Snaith et al. (1995), original validation + cutoff",
-   "note": "Item text freely published but 4 statements are the copyright of the journal/authors; not reproduced pending confirmation. Runner not enabled. DOI verified via Crossref 2026-09-09: catalog xlsx had 10.1016/0165-0327(94)00091-U (J Affective Disorders, wrong); correct is the BJP 1995 paper."
+   "note": "Item text freely published but 4 statements are the copyright of the journal/authors; not reproduced pending confirmation. Runner not enabled. DOI verified via Crossref 2026-09-09: catalog xlsx had 10.1016/0165-0327(94)00091-U (J Affective Disorders, wrong); correct is the BJP 1995 paper.",
+   "doi_candidates": [
+    {
+     "doi": "10.1192/bjp.167.1.99",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "A Scale for the Assessment of Hedonic Tone (Br J Psychiatry 167(1):99-103) — catalog DOI 10.1016/0165-0327(94)00091-U is wrong (J Affective Disorders 1994 fragment); correct is the BJP 1995 paper which matches the citation",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/0165-0327(94)00091-U",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -1390,7 +1458,24 @@
    "original": "Harvey, P. D., Greenberg, B. R., & Serper, M. R. (1989). The Affective Lability Scales: Development, reliability, and validity. Journal of Clinical Psychology, 45(5), 786-793.",
    "doi": "10.1002/1097-4679(198909)45:5<786::aid-jclp2270450515>3.0.co;2-p",
    "scoring_reference": "Harvey et al. (1989) for original ALS; Koenigsberg et al. (2002) for expanded version",
-   "note": "Catalog DOI points to a different paper (10.1037/0022-3514.57.6.1061 = Diener et al. 1989 or similar JPSP paper — not Harvey 1989). **Catalog DOI is wrong/needs verification.** Multiple ALS variants exist; confirm which is intended before encoding item text. Runner not enabled. DOI verified via Crossref 2026-09-09: catalog xlsx had 10.1037/0022-3514.57.6.1061 (JPSP, wrong); correct is Journal of Clinical Psychology 45(5), 786-793."
+   "note": "Catalog DOI points to a different paper (10.1037/0022-3514.57.6.1061 = Diener et al. 1989 or similar JPSP paper — not Harvey 1989). **Catalog DOI is wrong/needs verification.** Multiple ALS variants exist; confirm which is intended before encoding item text. Runner not enabled. DOI verified via Crossref 2026-09-09: catalog xlsx had 10.1037/0022-3514.57.6.1061 (JPSP, wrong); correct is Journal of Clinical Psychology 45(5), 786-793.",
+   "doi_candidates": [
+    {
+     "doi": "10.1002/1097-4679(198909)45:5<786::aid-jclp2270450515>3.0.co;2-p",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "The Affective Lability Scales: Development, reliability, and validity (Journal of Clinical Psychology 45(5):786-793) — catalog DOI 10.1037/0022-3514.57.6.1061 is a JPSP paper, wrong journal; correct DOI is J Clinical Psychology 45(5):786-793",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1037/0022-3514.57.6.1061",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -1601,7 +1686,24 @@
    "original": "Beck, A. T., Epstein, N., Brown, G., & Steer, R. A. (1988). An inventory for measuring clinical anxiety: Psychometric properties. Journal of Consulting and Clinical Psychology, 56(6), 893-897.",
    "doi": "10.1037/0022-006x.56.6.893",
    "scoring_reference": "Beck & Steer (1990) BAI manual; Beck et al. (1988) cutoff recommendations",
-   "note": "Item text restricted — scoring encoded only. Runner not enabled. DOI verified via Crossref 2026-09-09: catalog xlsx had 10.1016/0005-7967(88)90031-7 (Behaviour Research and Therapy, wrong); correct is JCCP 56(6), 893-897."
+   "note": "Item text restricted — scoring encoded only. Runner not enabled. DOI verified via Crossref 2026-09-09: catalog xlsx had 10.1016/0005-7967(88)90031-7 (Behaviour Research and Therapy, wrong); correct is JCCP 56(6), 893-897.",
+   "doi_candidates": [
+    {
+     "doi": "10.1037/0022-006x.56.6.893",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "An inventory for measuring clinical anxiety (JCCP 56(6):893-897) — catalog DOI 10.1016/0005-7967(88)90031-7 is a Behaviour Research and Therapy paper, wrong journal; correct is JCCP 1988",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/0005-7967(88)90031-7",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -1848,7 +1950,24 @@
    "original": "Connor, K. M., Davidson, J. R., Churchill, L. E., Swallow, A., & Weisler, R. H. (2000). Psychometric properties of the Social Phobia Inventory (SPIN): New self-rating scale. British Journal of Psychiatry, 176(4), 379-386.",
    "doi": "10.1192/bjp.176.4.379",
    "scoring_reference": "Connor et al. (2000); ROC refinements in Connor et al. (2000) Depress Anxiety",
-   "note": "DOI corrected via Crossref 2026-09-09: catalog xlsx had 10.1001/archpsyc.57.6.526 (Archives of General Psychiatry, wrong); correct is British Journal of Psychiatry 176(4), 379-386."
+   "note": "DOI corrected via Crossref 2026-09-09: catalog xlsx had 10.1001/archpsyc.57.6.526 (Archives of General Psychiatry, wrong); correct is British Journal of Psychiatry 176(4), 379-386.",
+   "doi_candidates": [
+    {
+     "doi": "10.1192/bjp.176.4.379",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Psychometric properties of the SPIN (Br J Psychiatry 176(4):379-386) — catalog DOI 10.1001/archpsyc.57.6.526 is Archives of General Psychiatry (that is the mini-SPIN/Liebowitz comparison paper family); the BJP DOI is correct for Connor et al 2000",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1001/archpsyc.57.6.526",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -3669,7 +3788,24 @@
    "flag": "green",
    "original": "Foa, E. B., Huppert, J. D., Leiberg, S., et al. (2002). The Obsessive-Compulsive Inventory: Development and validation of a short version. Psychological Assessment, 14(4), 485-496.",
    "doi": "10.1037/1040-3590.14.4.485",
-   "scoring_reference": "Foa et al. (2002), subscale key + psychometrics"
+   "scoring_reference": "Foa et al. (2002), subscale key + psychometrics",
+   "doi_candidates": [
+    {
+     "doi": "10.1016/j.brat.2003.08.002",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Psychometric properties of the OCI-R in a college sample",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/S0005-7967(01)00170-5",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -3766,7 +3902,24 @@
    "original": "Abramowitz, J. S., Deacon, B. J., Olatunji, B. O., et al. (2010). Assessment of obsessive-compulsive symptom dimensions: Development and preliminary validation of the Dimensional Obsessive-Compulsive Scale. Psychological Assessment, 22(1), 180-198.",
    "doi": "10.1037/a0018225",
    "scoring_reference": "Abramowitz et al. (2010), subscale key + validation",
-   "note": "Catalog row range (0-100) conflicts with 4x10 subscale structure (0-160) — verify against the official DOCS form before clinical use. Runner not enabled."
+   "note": "Catalog row range (0-100) conflicts with 4x10 subscale structure (0-160) — verify against the official DOCS form before clinical use. Runner not enabled.",
+   "doi_candidates": [
+    {
+     "doi": "10.3389/fpsyg.2017.01503",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "The Dimensional Obsessive-Compulsive Scale: Development and Validation of a Short Form (DOCS-SF)",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1037/a0018260",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -4005,7 +4158,24 @@
    "original": "Stefanis, N. C., Hanssen, M., Smirnis, N. K., et al. (2002). Evidence that three dimensions of psychosis have high correlations with each other in a large general population sample. Schizophrenia Research, 53(3), 209-218. Psychometric refinement: Konings, M., Bak, M., Hanssen, M., van Os, J., & Krabbendam, L. (2006). Validity and reliability of the CAPE. International Journal of Methods in Psychiatric Research, 15(4), 207-215.",
    "doi": "10.1192/bjp.181.4.275",
    "scoring_reference": "Stefanis et al. (2002); Konings et al. (2006) scoring refinement",
-   "note": "Item text free but per-item dimension assignment + percentile norms required. Runner not enabled."
+   "note": "Item text free but per-item dimension assignment + percentile norms required. Runner not enabled.",
+   "doi_candidates": [
+    {
+     "doi": "10.1017/s003329171100167x",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Schizophrenia-related <i>RGS4</i> gene variations specifically disrupt prefrontal control of saccadic eye movements",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1192/bjp.181.4.275",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -4073,7 +4243,24 @@
    "flag": "green",
    "original": "Loewy, R. L., Pearson, R., Vinogradov, S., Bearden, C. E., & Cannon, T. D. (2011). Psychosis risk screening with the Prodromal Questionnaire — Brief (PQ-B). Schizophrenia Research, 129(1), 42-46. (PQ original: Loewy et al. 2005.)",
    "doi": "10.1176/appi.ps.59.2.104",
-   "scoring_reference": "Loewy et al. (2011), ROC analysis Table 3"
+   "scoring_reference": "Loewy et al. (2011), ROC analysis Table 3",
+   "doi_candidates": [
+    {
+     "doi": "10.1016/j.schres.2011.03.029",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Psychosis risk screening with the Prodromal Questionnaire — Brief Version (PQ-B)",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1176/appi.ps.59.2.104",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -4925,7 +5112,24 @@
    "original": "Soto, C. J., & John, O. P. (2017). The next Big Five Inventory (BFI-2): Developing and assessing a hierarchical model with 15 facets. Journal of Personality and Social Psychology, 113(1), 117-143.",
    "doi": "10.1037/pspp0000091",
    "scoring_reference": "Soto & John (2017), official scoring key (Appendix)",
-   "note": "60 items not reproduced here (official key matrix required for scoring; obtain from the BFI-2 materials). Runner not enabled."
+   "note": "60 items not reproduced here (official key matrix required for scoring; obtain from the BFI-2 materials). Runner not enabled.",
+   "doi_candidates": [
+    {
+     "doi": "10.1016/j.jrp.2017.02.004",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Short and extra-short forms of the Big Five Inventory–2: The BFI-2-S and BFI-2-XS",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1037/pspp0000091",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -5034,7 +5238,24 @@
    "original": "Rammstedt, B., & John, O. P. (2007). Measuring personality in one minute or less: A 10-item short version of the Big Five Inventory in English and German. Journal of Research in Personality, 41(1), 203-212.",
    "doi": "10.1016/j.jrp.2006.02.001",
    "scoring_reference": "Rammstedt & John (2007), Table 1 keying",
-   "note": "Item text CC-BY-ND but per-item key must be confirmed; not reproduced here. Runner not enabled."
+   "note": "Item text CC-BY-ND but per-item key must be confirmed; not reproduced here. Runner not enabled.",
+   "doi_candidates": [
+    {
+     "doi": "10.1026/0012-1924.51.4.195",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Kurzversion des Big Five Inventory (BFI-K):",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1037/1040-3590.19.2.203",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -5297,7 +5518,24 @@
    "flag": "green",
    "original": "Krueger, R. F., Derringer, J., Markon, K. E., Watson, D., & Skodol, A. E. (2012). Initial construction of a maladaptive personality trait model and inventory for DSM-5. Psychological Medicine, 42(9), 1879-1890.",
    "doi": "10.1017/S0033291711002674",
-   "scoring_reference": "Krueger et al. (2012); official PID-5 form + scoring (APA psychiatry.org)"
+   "scoring_reference": "Krueger et al. (2012); official PID-5 form + scoring (APA psychiatry.org)",
+   "doi_candidates": [
+    {
+     "doi": "10.1177/1073191113486513",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "The Development and Psychometric Properties of an Informant-Report Form of the Personality Inventory for\n                    <i>DSM-5</i>\n                    (PID-5)",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1037/a0028158",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -6445,7 +6683,23 @@
    "original": "Morin, C. M. (1993). Insomnia: Psychological assessment and management. Guilford Press. Validation: Bastien, C. H., Vallières, A., & Morin, C. M. (2001). Validation of the Insomnia Severity Index as an outcome measure for insomnia research. Sleep Medicine, 2(4), 297-307.",
    "doi": "10.1016/s1389-9457(00)00065-4",
    "scoring_reference": "Bastien et al. (2001), Table 3 (cutoff derivation)",
-   "note": "DOI verified via Crossref 2026-09-09: original catalog row (xlsx) had 10.1016/S0165-1781(00)00305-2 which is a different paper (J Psychiatric Research); corrected to the actual Bastien 2001 Sleep Medicine DOI."
+   "note": "DOI verified via Crossref 2026-09-09: original catalog row (xlsx) had 10.1016/S0165-1781(00)00305-2 which is a different paper (J Psychiatric Research); corrected to the actual Bastien 2001 Sleep Medicine DOI.",
+   "doi_candidates": [
+    {
+     "doi": "10.1016/s1389-9457(00)00065-4",
+     "role": "article",
+     "source": "crossref",
+     "verified": "2026-09-09",
+     "note": "Bastien 2001 Sleep Medicine 2(4):297-307 — the ISI validation paper"
+    },
+    {
+     "doi": "10.1016/S0165-1781(00)00305-2",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original xlsx DOI (J Psychiatric Research) — kept for audit; expert review to adjudicate"
+    }
+   ]
   }
  },
  {
@@ -7392,7 +7646,24 @@
    "original": "Lubben, J., Blozik, E., Gillmann, G., et al. (2006). Performance of an abbreviated version of the Lubben Social Network Scale among three European community-dwelling older adult populations. Gerontologist, 46(4), 503-513.",
    "doi": "10.1080/13607860600672060",
    "scoring_reference": "Lubben et al. (2006), Table 3 cutoff analysis",
-   "note": "Item text freely published but exact per-item anchors vary by version (LSNS-6 vs LSNS-18 adaptation); not reproduced here pending confirmation of which form is intended. Runner not enabled."
+   "note": "Item text freely published but exact per-item anchors vary by version (LSNS-6 vs LSNS-18 adaptation); not reproduced here pending confirmation of which form is intended. Runner not enabled.",
+   "doi_candidates": [
+    {
+     "doi": "10.4324/9781003076391-158",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Lubben Social Network Scale (LSNS)",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1080/13607860600672060",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -8027,7 +8298,24 @@
    "flag": "green",
    "original": "Rosen, R. C., Riley, A., Wagner, G., Osterloh, I. H., Kirkpatrick, J., & Mishra, A. (1997). The International Index of Erectile Function (IIEF): A multidimensional scale for assessment of erectile dysfunction. Urology, 49(6), 822-830. Cutoffs: Cappelleri, J. C., et al. (1999). International Journal of Impotence Research, 11(6), 319-326.",
    "doi": "10.1016/S0090-4295(97)00238-0",
-   "scoring_reference": "Rosen et al. (1997); Cappelleri et al. (1999) cutoffs"
+   "scoring_reference": "Rosen et al. (1997); Cappelleri et al. (1999) cutoffs",
+   "doi_candidates": [
+    {
+     "doi": "10.1038/sj.ijir.3900481",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Reply to ‘The sexual health inventory for men (IIEF-5)’ by JA Vroege",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/S0022-5347(01)62115-3",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -8476,7 +8764,24 @@
    "flag": "green",
    "original": "Morgan, J. F., Reid, F., & Lacey, J. H. (1999). The SCOFF questionnaire: Assessment of a new screening tool for eating disorders. BMJ, 319(7223), 1467-1468.",
    "doi": "10.1136/bmj.319.7223.1467",
-   "scoring_reference": "Morgan et al. (1999), original validation Table 2"
+   "scoring_reference": "Morgan et al. (1999), original validation Table 2",
+   "doi_candidates": [
+    {
+     "doi": "10.1136/ewjm.172.3.164",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "The SCOFF questionnaire: a new screening tool for eating disorders",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1136/bmj.319.7223.1467",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -8697,7 +9002,24 @@
    "flag": "green",
    "original": "Bush, K., Kivlahan, D. R., McDonell, M. B., Fihn, S. D., & Bradley, K. A. (1998). The AUDIT alcohol consumption questions (AUDIT-C). Archives of Internal Medicine, 158(16), 1789-1795.",
    "doi": "10.1001/archinte.158.16.1789",
-   "scoring_reference": "Bush et al. (1998), sex-specific cutoff derivation"
+   "scoring_reference": "Bush et al. (1998), sex-specific cutoff derivation",
+   "doi_candidates": [
+    {
+     "doi": "10.1001/archinte.158.16.1789",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "The AUDIT Alcohol Consumption Questions (AUDIT-C)&lt;subtitle&gt;An Effective Brief Screening Test for Problem Drinking&lt;/subtitle&gt;",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1046/j.1525-1497.1998.00017.x",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -8866,7 +9188,24 @@
    "flag": "green",
    "original": "WHO ASSIST Working Group (2002). The Alcohol, Smoking and Substance Involvement Screening Test (ASSIST). Addiction, 97(9), 1183-1194. Psychometric validation: Humeniuk, R., et al. (2008). Addiction, 103(7), 1139-1147.",
    "doi": "10.1046/j.1360-0443.2002.00132.x",
-   "scoring_reference": "WHO ASSIST manual v3 (2010); Humeniuk et al. (2008) cutoffs"
+   "scoring_reference": "WHO ASSIST manual v3 (2010); Humeniuk et al. (2008) cutoffs",
+   "doi_candidates": [
+    {
+     "doi": "10.1108/03090560910923210",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Franchising in Ukraine",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/j.drugalcdep.2008.01.007",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -9016,7 +9355,24 @@
    "flag": "green",
    "original": "Heatherton, T. F., Kozlowski, L. T., Frecker, R. C., & Fagerström, K. O. (1991). The Fagerström Test for Nicotine Dependence: A revision of the Fagerström Tolerance Questionnaire. British Journal of Addiction, 86(9), 1119-1127.",
    "doi": "10.1111/j.1360-0443.1991.tb01879.x",
-   "scoring_reference": "Heatherton et al. (1991), item anchors + cutoffs"
+   "scoring_reference": "Heatherton et al. (1991), item anchors + cutoffs",
+   "doi_candidates": [
+    {
+     "doi": "10.63478/nd9rhgkj",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Strands that Bind: The Mexican Revolution and Working Class Internationalism: An Interview with Christina Heatherton",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1093/oxfordjournals.aje.a115445",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -9139,7 +9495,24 @@
    "flag": "green",
    "original": "Pontes, H. M., & Griffiths, M. D. (2015). Measuring DSM-5 Internet Gaming Disorder: Development and validation of a nine-item short scale — IGDS9-SF. Journal of Behavioral Addictions, 4(4), 349-356.",
    "doi": "10.1556/2006.4.2015.048",
-   "scoring_reference": "Pontes & Griffiths (2015)"
+   "scoring_reference": "Pontes & Griffiths (2015)",
+   "doi_candidates": [
+    {
+     "doi": "10.1016/j.psychres.2017.08.013",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Measurement Invariance of the Internet Gaming Disorder Scale–Short-Form (IGDS9-SF) between the United States of America, India and the United Kingdom",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/j.cpr.2015.04.004",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -10548,7 +10921,24 @@
    "flag": "green",
    "original": "Smout, M., Davies, M., Burns, N., & Christie, A. (2014). Development of the Valuing Questionnaire (VQ). Journal of Contextual Behavioral Science, 3(3), 164-172.",
    "doi": "10.1016/j.jcbs.2014.06.001",
-   "scoring_reference": "Smout et al. (2014), subscale key"
+   "scoring_reference": "Smout et al. (2014), subscale key",
+   "doi_candidates": [
+    {
+     "doi": "10.1016/j.jcbs.2014.06.001",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Development of the Valuing Questionnaire (VQ)",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/j.cpr.2014.01.004",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -11130,7 +11520,24 @@
    "flag": "green",
    "original": "Ware, J. E., & Sherbourne, C. D. (1992). The MOS 36-item Short-Form Health Survey (SF-36): I. Conceptual framework and item selection. Medical Care, 30(6), 473-483. Scoring: Ware, J. E., Snow, K. K., Kosinski, M., & Gandek, B. (1993). SF-36 Health Survey: Manual and interpretation guide. New England Medical Center.",
    "doi": "10.1097/00005650-199206000-00003",
-   "scoring_reference": "Ware et al. (1993) scoring manual"
+   "scoring_reference": "Ware et al. (1993) scoring manual",
+   "doi_candidates": [
+    {
+     "doi": "10.1007/bf03260127",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Erratum to The MOS 36-item short form health survey (SF-36): I. Conceptual framework",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1097/00005650-199206000-00002",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -11264,7 +11671,24 @@
    "flag": "green",
    "original": "WHOQOL Group (1998). Development of the World Health Organization WHOQOL-BREF quality of life assessment. Psychological Medicine, 28(3), 551-558.",
    "doi": "10.1017/S0033291798006667",
-   "scoring_reference": "WHOQOL-BREF scoring manual (WHO 1996/1998)"
+   "scoring_reference": "WHOQOL-BREF scoring manual (WHO 1996/1998)",
+   "doi_candidates": [
+    {
+     "doi": "10.1023/b:qure.0000018486.91360.00",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "The World Health Organization's WHOQOL-BREF quality of life assessment: Psychometric properties and results of the international field trial. A Report from the WHOQOL Group",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/j.pec.2003.12.002",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -11342,7 +11766,24 @@
    "flag": "green",
    "original": "Cella, D., et al. (2007). The Patient-Reported Outcomes Measurement Information System (PROMIS): Progress of an NIH Roadmap cooperative group during its first two years. Medical Care, 45(5 Suppl), S3-S11. Fatigue bank: Lai, J. S., et al. (2011). Quality of Life Research, 20(10), 1677-1687.",
    "doi": "10.1097/MLR.0b013e31803c167a",
-   "scoring_reference": "healthmeasures.net scoring service (IRT T-score lookup tables)"
+   "scoring_reference": "healthmeasures.net scoring service (IRT T-score lookup tables)",
+   "doi_candidates": [
+    {
+     "doi": "10.1016/j.jval.2012.08.289",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "PRM38 Measurement Properties of the Spanish Version of the Pediatric Promis Fatigue Item Bank",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1007/s11136-009-9491-3",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -11420,7 +11861,24 @@
    "flag": "green",
    "original": "Amtmann, D., Cook, K. F., Jensen, M. P., et al. (2010). Development of a PROMIS item bank to measure pain interference. Pain, 150(1), 173-182.",
    "doi": "10.1016/j.pain.2010.04.025",
-   "scoring_reference": "healthmeasures.net scoring service (IRT T-score lookup tables)"
+   "scoring_reference": "healthmeasures.net scoring service (IRT T-score lookup tables)",
+   "doi_candidates": [
+    {
+     "doi": "10.1016/j.pain.2010.04.025",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Development of a PROMIS item bank to measure pain interference",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/j.jpain.2010.04.005",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -11566,7 +12024,24 @@
    "original": "Lerner, D., Amick, B. C., Lee, J. C., et al. (2001). The Work Instability Scale. (Short self-report version: Lerner et al. 2001, Arthritis & Rheumatism / J Occup Health.)",
    "doi": null,
    "scoring_reference": "Lerner et al. (2001) WIS scoring sheet",
-   "note": "Stage-classification algorithm requires the official scoring sheet — not a simple sum. Runner not enabled."
+   "note": "Stage-classification algorithm requires the official scoring sheet — not a simple sum. Runner not enabled.",
+   "doi_candidates": [
+    {
+     "doi": "10.15695/amqst.v11i1.3914",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Interview with Robert Barsky",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/0022-3999(90)90041-S",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -11712,7 +12187,24 @@
    "original": "Allison, C., Auyeung, B., & Baron-Cohen, S. (2012). Toward brief 'red flags' for autism screening: The Short Autism Spectrum Quotient and an abbreviated Q-CHAT in adults. Journal of the American Academy of Child & Adolescent Psychiatry (AQ-10 validation in adults: Allison et al., 2012, JADD).",
    "doi": "10.1080/13623606.2012.681870",
    "scoring_reference": "Allison et al. (2012); NICE CG142 autism pathway (AQ-10 as triage)",
-   "note": "Item text free but per-item key matrix required; not reproduced here. Runner not enabled."
+   "note": "Item text free but per-item key matrix required; not reproduced here. Runner not enabled.",
+   "doi_candidates": [
+    {
+     "doi": "10.1186/2040-2392-1-10",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Defining the broader, medium and narrow autism phenotype among parents using the Autism Spectrum Quotient (AQ)",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1080/13623606.2012.681870",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -14120,7 +14612,24 @@
    "flag": "green",
    "original": "Heatherton, T. F., Kozlowski, L. T., Frecker, R. C., & Fagerström, K. O. (1991). British Journal of Addiction, 86(9), 1119-1127. HSI psychometrics: Borrelli, B., et al. (2010). Nicotine & Tobacco Research, 12(4), 447-452.",
    "doi": "10.1111/j.1360-0443.1991.tb01879.x",
-   "scoring_reference": "Heatherton et al. (1991); Borrelli et al. (2010) HSI validation"
+   "scoring_reference": "Heatherton et al. (1991); Borrelli et al. (2010) HSI validation",
+   "doi_candidates": [
+    {
+     "doi": "10.63478/nd9rhgkj",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Strands that Bind: The Mexican Revolution and Working Class Internationalism: An Interview with Christina Heatherton",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1093/oxfordjournals.aje.a115445",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -14263,7 +14772,24 @@
    "flag": "green",
    "original": "Straus, M. A., Hamby, S. L., Boney-McCoy, S., & Honey, D. B. (1996). The Revised Conflict Tactics Scales (CTS2). Journal of Family Issues, 17(3), 283-316.",
    "doi": "10.1177/019251396017003001",
-   "scoring_reference": "Straus et al. (1996), scoring guide"
+   "scoring_reference": "Straus et al. (1996), scoring guide",
+   "doi_candidates": [
+    {
+     "doi": "10.1177/019251396017003001",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "The Revised Conflict Tactics Scales (CTS2)",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1111/j.1545-5300.1996.00035.x",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -14848,7 +15374,24 @@
    "flag": "green",
    "original": "Ryff, C. D., & Keyes, C. L. M. (1995). The structure of psychological well-being revisited. Journal of Personality and Social Psychology, 69(4), 719-727.",
    "doi": "10.1037/0022-3514.69.4.719",
-   "scoring_reference": "Ryff & Keyes (1995); official PWB scoring key (Wisconsin Longitudinal Study)"
+   "scoring_reference": "Ryff & Keyes (1995); official PWB scoring key (Wisconsin Longitudinal Study)",
+   "doi_candidates": [
+    {
+     "doi": "10.1017/cbo9780511920974.001",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Foreword by Carol D. Ryff",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1037/0012-1649.25.4.710",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -15172,7 +15715,24 @@
    "flag": "green",
    "original": "Zanarini, M. C., Vujanovic, A. A., Parulne, E. A., Boulanger, J. L., Frankenburg, F. R., & Hennen, J. (2003). A screening measure for BPD: The McLean Screening Instrument for Borderline Personality Disorder (MSI-BPD). Journal of Personality Disorders, 17(6), 568-573.",
    "doi": "10.1521/pedi.17.6.568.29355",
-   "scoring_reference": "Zanarini et al. (2003), ROC analysis"
+   "scoring_reference": "Zanarini et al. (2003), ROC analysis",
+   "doi_candidates": [
+    {
+     "doi": "10.1521/pedi.17.3.233.22147",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Zanarini Rating Scale For Borderline Personality Disorder (ZAN-BPD): A Continuous Measure of DSM-IV Borderline Psychopathology",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1037/1040-3590.15.3.355",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {
@@ -16257,7 +16817,24 @@
    "flag": "green",
    "original": "Bond, F. W., Hayes, S. C., Baer, R. A., et al. (2011). Preliminary psychometric properties of the Acceptance and Action Questionnaire-II: A revised measure of psychological inflexibility and experiential avoidance. Behavior Therapy, 42(4), 676-688.",
    "doi": "10.1016/j.beth.2011.03.007",
-   "scoring_reference": "Bond et al. (2011), keying"
+   "scoring_reference": "Bond et al. (2011), keying",
+   "doi_candidates": [
+    {
+     "doi": "10.1016/j.erap.2009.09.001",
+     "role": "crossref-hit",
+     "source": "crossref-api",
+     "verified": "2026-09-09",
+     "title": "Traduction et validation française du questionnaire d’acceptation et d’action (AAQ-II)",
+     "note": "auto-discovered candidate — expert review pending"
+    },
+    {
+     "doi": "10.1016/j.beth.2011.03.007",
+     "role": "catalog-original",
+     "source": "xlsx",
+     "verified": "",
+     "note": "original catalog DOI — kept for audit"
+    }
+   ]
   }
  },
  {

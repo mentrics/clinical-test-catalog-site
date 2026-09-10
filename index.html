@@ -351,7 +351,12 @@ function renderDetail(id) {
   const flag = i.provenance ? FLAG[i.provenance.flag] : fl;
   const prov = i.provenance ? `
     <dt>Original publication</dt><dd>${i.provenance.original ?? '—'}</dd>
-    <dt>DOI</dt><dd>${doiLink(i.provenance.doi || i.doi)}</dd>
+    <dt>DOI (primary)</dt><dd>${doiLink(i.provenance.doi || i.doi)}</dd>
+    ${(i.provenance.doi_candidates && i.provenance.doi_candidates.length) ? `
+    <dt>DOI candidates</dt><dd>${i.provenance.doi_candidates.map(c =>
+      `${doiLink(c.doi)} <span class="count">[${c.role}${c.verified ? ' · verified ' + c.verified : ' · unverified'}]${c.note ? ' — ' + c.note : ''}</span>`
+    ).join('<br>')}</dd>
+    <dt>Review status</dt><dd><span class="flag-yellow">⚠ Multiple DOI candidates — expert review pending to promote the authoritative one</span></dd>` : ''}
     ${i.provenance.derived_from ? `<dt>Derived from</dt><dd>${i.provenance.derived_from}</dd>` : ''}
     ${i.provenance.note ? `<dt>Data note</dt><dd>${i.provenance.note}</dd>` : ''}` : `
     <dt>Citation</dt><dd>${i.citation ?? '—'}</dd>
